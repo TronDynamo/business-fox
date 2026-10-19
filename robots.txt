@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://trondynamo.github.io/business-fox/sitemap.xml
