@@ -209,7 +209,12 @@ def load_products():
     for p in cat["products"]:
         p = dict(p)
         p["file"] = files.get(p.get("id") or "", {}).get("file")
-        p["kind"] = "printable" if (p.get("id") or "").startswith("BF-PRI") else "service"
+        if (p.get("id") or "").startswith("BF-PRI"):
+            p["kind"] = "printable"
+        elif (p.get("id") or "").startswith("BF-WEB") or re.search(r"website|launch kit", p["title"], re.I):
+            p["kind"] = "website"
+        else:
+            p["kind"] = "service"
         prods.append(p)
     return prods
 
@@ -261,6 +266,13 @@ def gmail_sent_to(addr, after):
     except Exception as e:
         log(f"Gmail check failed: {e}")
         return None
+
+
+WEBSITE_DONE = re.compile(r"^\s*(Delivered|Revised):\s*your website", re.I)
+
+
+def website_delivered(subjects):
+    return [x for x in (subjects or []) if WEBSITE_DONE.search(x)]
 
 
 def send_mail(to, subject, text, html=None, attachment=None, attachment_name=None):
@@ -400,7 +412,7 @@ def main():
         rec = state["orders"].get(pid)
         paid = pay.get("status") == "COMPLETED"
         refunded = (pay.get("refunded_money") or {}).get("amount", 0) >= (pay.get("amount_money") or {}).get("amount", 1)
-        if rec and rec["status"] in ("delivered_by_ai", "delivered_by_bot", "manual_done"):
+        if rec and rec["status"] in ("delivered_by_ai", "delivered_by_bot", "manual_done", "website_in_progress"):
             if refunded and rec.get("payment_status") != "REFUNDED":
                 rec["payment_status"] = "REFUNDED"
             continue
@@ -454,6 +466,14 @@ def main():
             mark("waiting_for_ai", f"Giving Business-Fox until {(created + grace).strftime('%H:%M UTC')} to deliver")
             continue
         sent = gmail_sent_to(buyer_email, created)
+        is_web = any(it["kind"] == "website" for it in items)
+        if is_web and website_delivered(sent):
+            mark("delivered_by_ai", "Website delivered: " + "; ".join(website_delivered(sent))[:200])
+            continue
+        if is_web and sent:
+            rec["website_pending"] = True
+            mark("website_in_progress", "Business-Fox sent the questionnaire. Waiting for the buyer's answers, the build and your approval.")
+            continue
         if sent:
             mark("delivered_by_ai", "Found email to buyer after payment: " + "; ".join(sent)[:200])
             continue
@@ -474,14 +494,35 @@ def main():
                 prod = next(p for p in prods if p["slug"] == it["product_slug"])
                 results.append(deliver(rec, prod, key))
             needs_work = any(r == "brief_request_sent" for r in results)
-            mark("delivered_by_bot", ("Bot emailed " + ", ".join(results)) +
-                 (" - service work still needs to be done" if needs_work else ""))
-            rec["service_pending"] = needs_work
+            if is_web:
+                rec["website_pending"] = True
+                mark("website_in_progress", "Bot sent the questionnaire because Business-Fox hadn't. Waiting for the build and your approval.")
+            else:
+                mark("delivered_by_bot", ("Bot emailed " + ", ".join(results)) +
+                     (" - service work still needs to be done" if needs_work else ""))
+                rec["service_pending"] = needs_work
             acted.append(f"Backup delivery to {buyer_email}: {', '.join(i['product_title'] for i in items)} ({', '.join(results)})")
         except Exception as e:
             rec["attempts"] = rec.get("attempts", 0) + 1
             mark("delivery_failed", f"Send failed (try {rec['attempts']}/3): {e}"[:300])
             acted.append(f"FAILED delivery to {buyer_email} (try {rec['attempts']}/3): {e}")
+
+    # websites stay "in progress" until the finished site email ("Delivered: your website ...") is in Sent mail
+    for rec in state["orders"].values():
+        if rec.get("status") != "website_in_progress" or not rec.get("email"):
+            continue
+        paid_dt = datetime.strptime(rec["paid_at"][:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc)
+        done = website_delivered(gmail_sent_to(rec["email"], paid_dt))
+        if done:
+            rec["website_pending"] = False
+            rec["status"] = "delivered_by_ai"
+            rec["history"].append({"at": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"), "status": "delivered_by_ai",
+                                   "note": "Website approved and delivered: " + "; ".join(done)[:200]})
+            acted.append(f"Website delivered to {rec['email']}")
+        elif NOW - paid_dt > timedelta(days=CFG.get("website_overdue_days", 9)) and not rec.get("overdue_alerted"):
+            rec["overdue_alerted"] = True
+            acted.append(f"Website for {rec['email']} is past {CFG.get('website_overdue_days', 9)} days and not delivered. "
+                         "Check Business-Fox (is the PC on? is it waiting for 'approve N'?).")
 
     state["initialized"] = state.get("initialized") or NOW.strftime("%Y-%m-%dT%H:%M:%SZ")
     changed = save_state(key, state)
@@ -492,13 +533,15 @@ def main():
         counts[r["status"]] = counts.get(r["status"], 0) + 1
     agent = {
         "_readme": "Written by the backup delivery bot. No personal data. Business-Fox: treat orders marked "
-                   "delivered_by_bot as already delivered (do not email them again). service_pending=true means the "
+                   "delivered_by_bot as already delivered (do not email them again). website_in_progress means the questionnaire "
+                   "went out and the site must still be built and approved. service_pending=true means the "
                    "custom work still has to be done once the buyer sends their brief.",
         "checked": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "counts": counts,
         "orders": sorted([{"ref": hashlib.sha256(r["payment_id"].encode()).hexdigest()[:12], "paid_at": r["paid_at"],
                            "products": [i["product_slug"] for i in r["items"]], "status": r["status"],
-                           "service_pending": r.get("service_pending", False), "method": r.get("method")}
+                           "service_pending": r.get("service_pending", False),
+                           "website_pending": r.get("website_pending", False), "method": r.get("method")}
                           for r in state["orders"].values()], key=lambda x: x["paid_at"], reverse=True)[:200],
     }
     write_json_if_changed(AGENT_FILE, agent)

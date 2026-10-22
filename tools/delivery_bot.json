@@ -14,5 +14,6 @@
   "square_item_map": {},
   "ignore_payment_ids": {
     "cbjyO42y9GCrRhqIGCySiZIbQRZZY": "Square $1 account verification charge (Oct 18)"
-  }
+  },
+  "website_overdue_days": 9
 }

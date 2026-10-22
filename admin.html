@@ -117,6 +117,7 @@ code{background:var(--bg);padding:1px 5px;border-radius:4px;font-size:13px}
         <option value="delivered_by_bot">Delivered by bot</option>
         <option value="delivered_by_ai">Delivered (email found)</option>
         <option value="waiting_for_ai">Waiting for AI</option>
+        <option value="website_in_progress">Websites in progress</option>
         <option value="service">Service work pending</option>
       </select>
       <span class="sp" style="flex:1"></span>
@@ -190,7 +191,7 @@ document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => {
 
 const LABEL = {
   delivered_by_bot: ["Delivered by bot", "ok"], delivered_by_ai: ["Delivered (email found)", "ok"], manual_done: ["Delivered manually", "ok"],
-  waiting_for_ai: ["Waiting for AI", "info"], needs_review: ["Needs attention", "bad"], delivery_failed: ["Send failed", "bad"], not_paid: ["Not paid / refunded", "warn"]
+  waiting_for_ai: ["Waiting for AI", "info"], website_in_progress: ["Website in progress", "info"], needs_review: ["Needs attention", "bad"], delivery_failed: ["Send failed", "bad"], not_paid: ["Not paid / refunded", "warn"]
 };
 const money = n => "$" + Number(n || 0).toFixed(2);
 const when = s => new Date(s).toLocaleString([], {month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit"});
@@ -215,6 +216,7 @@ function renderOrders(){
   $("#stats").innerHTML = [
     [ORDERS.length, "Orders"], [money(paid.reduce((t, o) => t + o.amount, 0)), "Paid revenue"],
     [ORDERS.filter(needsAttention).length, "Need attention"], [ORDERS.filter(o => o.status === "delivered_by_bot").length, "Sent by the bot"],
+    [ORDERS.filter(o => o.status === "website_in_progress").length, "Websites in progress"],
     [ORDERS.filter(o => o.service_pending).length, "Service work pending"]
   ].map(([v, l]) => `<div class="card stat"><b>${v}</b><span>${l}</span></div>`).join("");
   const q = $("#q").value.trim().toLowerCase(), f = $("#filter").value;
@@ -235,7 +237,7 @@ function renderOrders(){
     return `<tr>
       <td data-l="Paid" class="num">${when(o.paid_at)}</td>
       <td data-l="Buyer">${esc(o.buyer_name || "")}${o.buyer_name ? "<br>" : ""}<span class="muted">${esc(o.email || "No email on payment")}</span></td>
-      <td data-l="Product">${prods}${o.service_pending ? '<br><span class="pill warn">Service work to do</span>' : ""}</td>
+      <td data-l="Product">${prods}${o.service_pending ? '<br><span class="pill warn">Service work to do</span>' : ""}${o.status === "website_in_progress" ? '<br><span class="muted" style="font-size:12.5px">Delivered after you approve it in Business-Fox (type "approve N" in his chat)</span>' : ""}</td>
       <td data-l="Amount" class="num">${money(o.amount)}<br><span class="muted">${esc(o.method || "")}</span></td>
       <td data-l="Status"><span class="pill ${cls}">${lab}</span>
         <details><summary>History</summary><ul>${(o.history || []).map(h => `<li>${when(h.at)}: ${esc(h.note)}</li>`).join("")}</ul></details></td>
