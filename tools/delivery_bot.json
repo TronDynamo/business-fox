@@ -11,5 +11,8 @@
   "send_if_gmail_unavailable": true,
   "enable_cash_app_pay": true,
   "owner_alerts": true,
-  "square_item_map": {}
+  "square_item_map": {},
+  "ignore_payment_ids": {
+    "cbjyO42y9GCrRhqIGCySiZIbQRZZY": "Square $1 account verification charge (Oct 18)"
+  }
 }

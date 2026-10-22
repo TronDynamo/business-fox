@@ -389,8 +389,14 @@ def main():
     max_age = timedelta(hours=CFG.get("max_auto_send_hours", 72))
     acted = []
 
+    ignore = CFG.get("ignore_payment_ids", {})
+    for pid in list(state["orders"]):
+        if pid in ignore:
+            state["orders"].pop(pid)
     for pay in payments:
         pid = pay["id"]
+        if pid in ignore:
+            continue
         rec = state["orders"].get(pid)
         paid = pay.get("status") == "COMPLETED"
         refunded = (pay.get("refunded_money") or {}).get("amount", 0) >= (pay.get("amount_money") or {}).get("amount", 1)
