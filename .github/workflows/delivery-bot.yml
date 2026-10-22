@@ -9,6 +9,18 @@ on:
         description: "Re-create the admin login from the ADMIN_PASSWORD secret"
         type: boolean
         default: false
+      resend_payment_id:
+        description: "Supervisor fix: Square payment ID of the order to resend"
+        required: false
+        default: ""
+      resend_file:
+        description: "Vault file to send (vault/products/<ID>.pdf.enc or vault/fixes/<name>.pdf.enc)"
+        required: false
+        default: ""
+      resend_note:
+        description: "Short message to the customer explaining the fix"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -33,6 +45,9 @@ jobs:
           SQUARE_ACCESS_TOKEN: ${{ secrets.SQUARE_ACCESS_TOKEN }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          RESEND_PAYMENT_ID: ${{ inputs.resend_payment_id }}
+          RESEND_FILE: ${{ inputs.resend_file }}
+          RESEND_NOTE: ${{ inputs.resend_note }}
         run: python tools/delivery_bot.py ${{ inputs.setup_admin && '--setup-admin' || '' }}
       - name: Save order history
         run: |

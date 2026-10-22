@@ -363,6 +363,28 @@ def write_json_if_changed(path, doc, ignore=("checked",)):
 
 
 # ------------------------------------------------------------------ main
+def resend(key, state):
+    """Supervisor fix: send a (corrected) vault file to the buyer of one order.
+    Inputs come from the workflow: RESEND_PAYMENT_ID, RESEND_FILE (vault path like vault/products/X.pdf.enc or
+    vault/fixes/<name>.pdf.enc) and RESEND_NOTE (message to the customer). Only paid orders already in the history qualify."""
+    pid, path, note = (os.environ.get("RESEND_PAYMENT_ID") or "").strip(), (os.environ.get("RESEND_FILE") or "").strip(), (os.environ.get("RESEND_NOTE") or "").strip()
+    if not pid:
+        return None
+    rec = state["orders"].get(pid)
+    if not rec or not rec.get("email"):
+        return f"Resend skipped: order {pid} isn't in the history or has no buyer email."
+    if not re.fullmatch(r"vault/(products|fixes)/[A-Za-z0-9._-]+\.pdf\.enc", path) or not os.path.exists(path):
+        return f"Resend skipped: file {path!r} not found in the vault."
+    data = dec(key, open(path, "rb").read())
+    name = (rec.get("items") or [{}])[0].get("product_title") or (rec.get("items") or [{}])[0].get("square_name") or "Your order"
+    text = (f"Hi,\n\n{note or 'Here is an updated version of your order.'}\n\nYour corrected file is attached.\n\n"
+            f"Thanks for buying from {CFG['store_name']}. Just reply to this email if anything else needs fixing.\n")
+    send_mail(rec["email"], f"Updated: {name}", text, attachment=data, attachment_name=os.path.basename(path).replace(".enc", ""))
+    rec.setdefault("history", []).append({"at": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"), "status": rec.get("status"),
+                                          "note": f"Supervisor sent a corrected file ({os.path.basename(path)}): {note[:160]}"})
+    return f"Sent corrected file to {rec['email']} for order {pid}"
+
+
 def main():
     key = vault_key()
     missing = [s for s in ("VAULT_KEY", "SQUARE_ACCESS_TOKEN", "GMAIL_APP_PASSWORD") if not os.environ.get(s)]
@@ -393,6 +415,11 @@ def main():
             log(f"Cash App Pay check failed: {e}")
 
     state = load_state(key)
+    r = resend(key, state)
+    if r:
+        log(r)
+        if r.startswith("Sent"):
+            alert_owner("[Business Fox bot] Corrected file sent", [r])
     first_run = not state.get("initialized")
     since = NOW - timedelta(days=CFG.get("history_days_first_run", 30) if first_run else CFG.get("lookback_days", 3))
     payments = list_payments(since)
