@@ -1,0 +1,53 @@
+{
+  "base_url": "https://trondynamo.github.io/business-fox/",
+  "contact_email": "godzilla9zjb@gmail.com",
+  "banned_emails": [
+    "artipixel99@gmail.com"
+  ],
+  "guide_similarity_threshold": 0.6,
+  "renames": {
+    "local-service-business-monthly-content-bundle-19.html": "Contractor monthly content bundle"
+  },
+  "not_duplicates": [],
+  "redirects": {
+    "c-planners-productivity-self-improvement.html": "c-people-looking-for-daily-planners-to-help-them-stay-organized-and-focu.html",
+    "daily-habit-tracker-pdf-3.html": "daily-habit-tracker-pdf-1.html",
+    "guide-essential-operations-guide-for-local-service-businesses.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-how-local-service-businesses-can-plan-weekly-content-without-losing-th.html": "guide-how-to-create-a-monthly-content-plan-for-your-local-service-business.html",
+    "guide-how-to-build-a-simple-small-business-marketing-plan.html": "guide-local-service-business-marketing-guide-practical-steps-to-get-more-cus.html",
+    "guide-how-to-estimate-local-contractor-job-costs-accurately.html": "guide-how-to-build-a-reliable-contractor-estimate-and-quote-workflow.html",
+    "guide-how-to-estimate-local-contractor-jobs-accurately.html": "guide-how-to-build-a-reliable-contractor-estimate-and-quote-workflow.html",
+    "guide-how-to-get-more-customer-reviews-for-your-local-service-business.html": "guide-how-to-grow-your-local-service-business-practical-steps-for-steady-wor.html",
+    "guide-how-to-get-more-repeat-customers-for-your-local-service-business.html": "guide-how-to-grow-your-local-service-business-practical-steps-for-steady-wor.html",
+    "guide-how-to-manage-local-contractor-projects-without-losing-your-mind.html": "guide-how-to-track-local-contractor-projects-without-losing-your-mind.html",
+    "guide-how-to-reduce-cart-abandonment-in-your-online-store.html": "guide-how-to-reduce-cart-abandonment-in-your-e-commerce-store.html",
+    "guide-how-to-run-a-quarterly-planning-session-for-your-local-service-busines.html": "guide-quarterly-planning-guide-for-local-service-businesses.html",
+    "guide-how-to-run-a-weekly-email-newsletter-without-losing-your-saturday.html": "guide-how-to-plan-a-small-business-newsletter-without-losing-hours-every-wee.html",
+    "guide-how-to-streamline-daily-operations-for-your-local-service-business.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-how-to-streamline-local-service-business-operations-a-practical-guide.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-how-to-track-local-contractor-projects-without-the-chaos.html": "guide-how-to-track-local-contractor-projects-without-losing-your-mind.html",
+    "guide-how-to-write-a-clear-e-commerce-return-policy-that-reduces-support-tic.html": "guide-how-to-write-a-clear-e-commerce-return-policy-that-builds-trust.html",
+    "guide-how-to-write-a-clear-e-commerce-return-policy.html": "guide-how-to-write-a-clear-e-commerce-return-policy-that-builds-trust.html",
+    "guide-how-to-write-an-about-page-for-your-independent-online-shop.html": "guide-how-to-write-an-about-page-for-your-small-business-website.html",
+    "guide-how-to-write-an-about-page-for-your-local-service-business.html": "guide-how-to-write-an-about-page-for-your-small-business-website.html",
+    "guide-how-to-write-an-about-page-that-builds-trust-with-customers.html": "guide-how-to-write-an-about-page-for-your-small-business-website.html",
+    "guide-how-to-write-e-commerce-product-descriptions-that-convert.html": "guide-how-to-write-product-descriptions-that-convert.html",
+    "guide-how-to-write-e-commerce-product-descriptions-that-sell.html": "guide-how-to-write-product-descriptions-that-convert.html",
+    "guide-how-to-write-product-descriptions-that-sell-for-e-commerce-stores.html": "guide-how-to-write-product-descriptions-that-convert.html",
+    "guide-how-to-write-product-descriptions-that-sell.html": "guide-how-to-write-product-descriptions-that-convert.html",
+    "guide-local-business-content-planning-guide-a-practical-framework.html": "guide-how-to-create-a-monthly-content-plan-for-your-local-service-business.html",
+    "guide-local-service-business-content-planning-guide.html": "guide-how-to-create-a-monthly-content-plan-for-your-local-service-business.html",
+    "guide-local-service-business-operations-guide-streamline-your-daily-workflow.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-morning-routine-planning-for-young-adults-a-step-by-step-guide.html": "guide-how-to-build-a-realistic-morning-routine-for-consistent-productivity.html",
+    "guide-practical-marketing-guide-for-local-service-businesses.html": "guide-local-service-business-marketing-guide-practical-steps-to-get-more-cus.html",
+    "guide-practical-marketing-strategies-for-local-service-businesses.html": "guide-local-service-business-marketing-guide-practical-steps-to-get-more-cus.html",
+    "guide-practical-operations-guide-for-local-service-businesses.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-practical-small-business-email-newsletter-strategy.html": "guide-how-to-plan-a-small-business-newsletter-without-losing-hours-every-wee.html",
+    "guide-practical-small-business-marketing-guide-for-steady-growth.html": "guide-local-service-business-marketing-guide-practical-steps-to-get-more-cus.html",
+    "guide-practical-steps-for-local-business-operations-and-planning.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-practical-steps-for-streamlining-local-service-business-operations.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "local-contractor-essential-bundle-4-item-set-27.html": "local-contractor-business-starter-kit-28.html",
+    "local-contractor-site-safety-and-compliance-pack-30.html": "local-contractor-job-safety-and-site-audit-set-29.html",
+    "local-contractor-site-safety-and-compliance-pack-34.html": "local-contractor-job-safety-and-site-audit-set-29.html"
+  }
+}

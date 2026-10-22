@@ -1,0 +1,482 @@
+{
+  "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
+  "updated": "2026-10-22T10:24:33Z",
+  "contact_email": "godzilla9zjb@gmail.com",
+  "products": [
+    {
+      "slug": "daily-habit-tracker-pdf-1.html",
+      "id": "BF-PRI-3D4FB4",
+      "title": "Daily Habit Tracker PDF",
+      "price": "4.99",
+      "checkout": "https://square.link/u/OfbcG5GH",
+      "listed": true
+    },
+    {
+      "slug": "simple-morning-routine-tracker-2.html",
+      "id": "BF-PRI-B91493",
+      "title": "Simple Morning Routine Tracker",
+      "price": "4.99",
+      "checkout": "https://square.link/u/0URJ0HLF",
+      "listed": true
+    },
+    {
+      "slug": "small-business-product-description-rewrite-4.html",
+      "id": "BF-SER-5A3BB4",
+      "title": "Small business product description rewrite",
+      "price": "25.00",
+      "checkout": "https://square.link/u/quO3ETJX",
+      "listed": true
+    },
+    {
+      "slug": "small-business-launch-copy-bundle-5.html",
+      "id": "BF-SER-81AFE7",
+      "title": "Small business launch copy bundle",
+      "price": "28.99",
+      "checkout": "https://square.link/u/YAoOhLGC",
+      "listed": true
+    },
+    {
+      "slug": "about-page-copywriting-service-6.html",
+      "id": "BF-SER-E1A93E",
+      "title": "About Page Copywriting Service",
+      "price": "25.00",
+      "checkout": "https://square.link/u/zX0Lqlod",
+      "listed": true
+    },
+    {
+      "slug": "e-commerce-return-policy-rewrite-7.html",
+      "id": "BF-SER-BE0220",
+      "title": "E-commerce return policy rewrite",
+      "price": "25.00",
+      "checkout": "https://square.link/u/7y25uIPX",
+      "listed": true
+    },
+    {
+      "slug": "e-commerce-product-description-bundle-8.html",
+      "id": "BF-SER-5B3221",
+      "title": "E-commerce product description bundle",
+      "price": "25.00",
+      "checkout": "https://square.link/u/5etHCfaZ",
+      "listed": true
+    },
+    {
+      "slug": "weekly-email-newsletter-planner-9.html",
+      "id": "BF-PRI-866B87",
+      "title": "Weekly Email Newsletter Planner",
+      "price": "8.99",
+      "checkout": "https://square.link/u/L54qOHUq",
+      "listed": true
+    },
+    {
+      "slug": "small-business-social-media-captions-package-10.html",
+      "id": "BF-SER-3C3A41",
+      "title": "Small Business Social Media Captions Package",
+      "price": "19.99",
+      "checkout": "https://square.link/u/RX0MD04x",
+      "listed": true
+    },
+    {
+      "slug": "local-shop-social-media-captions-11.html",
+      "id": "BF-SER-962601",
+      "title": "Local shop social media captions",
+      "price": "25.00",
+      "checkout": "https://square.link/u/FzsI6vhM",
+      "listed": true
+    },
+    {
+      "slug": "local-business-email-newsletter-copywriting-12.html",
+      "id": "BF-SER-B64A3F",
+      "title": "Local business email newsletter copywriting",
+      "price": "29.99",
+      "checkout": "https://square.link/u/yT1u0awM",
+      "listed": true
+    },
+    {
+      "slug": "local-contractor-client-project-tracker-13.html",
+      "id": "BF-PRI-C9CED6",
+      "title": "Local Contractor Client Project Tracker",
+      "price": "9.99",
+      "checkout": "https://square.link/u/rFGxDBDP",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-operations-checklist-14.html",
+      "id": "BF-PRI-FA049A",
+      "title": "Local Service Business Operations Checklist",
+      "price": "9.99",
+      "checkout": "https://square.link/u/Z6GR20bB",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-quote-and-invoice-checklist-15.html",
+      "id": "BF-PRI-DE4BF0",
+      "title": "Local Service Business Quote and Invoice Checklist",
+      "price": "5.99",
+      "checkout": "https://square.link/u/W77l9UOQ",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-weekly-schedule-planner-16.html",
+      "id": "BF-PRI-7BAFF6",
+      "title": "Local Service Business Weekly Schedule Planner",
+      "price": "4.99",
+      "checkout": "https://square.link/u/QItbx0D1",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-quarterly-planning-bundle-17.html",
+      "id": "BF-PRI-5617D6",
+      "title": "Local Service Business Quarterly Planning Bundle",
+      "price": "8.99",
+      "checkout": "https://square.link/u/6Zr1pH7C",
+      "listed": true
+    },
+    {
+      "slug": "local-business-customer-review-tracker-18.html",
+      "id": "BF-PRI-C064C9",
+      "title": "Local business customer review tracker",
+      "price": "4.99",
+      "checkout": "https://square.link/u/paamgXo3",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-monthly-content-bundle-19.html",
+      "id": "BF-SER-49539F",
+      "title": "Contractor monthly content bundle",
+      "price": "48.99",
+      "checkout": "https://square.link/u/YDHlI3lB",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-follow-up-tracker-20.html",
+      "id": "BF-PRI-A56460",
+      "title": "Local Service Business Follow Up Tracker",
+      "price": "4.99",
+      "checkout": "https://square.link/u/pbsVGrg5",
+      "listed": true
+    },
+    {
+      "slug": "local-contractor-job-cost-estimating-sheet-21.html",
+      "id": "BF-PRI-61A882",
+      "title": "Local Contractor Job Cost Estimating Sheet",
+      "price": "7.99",
+      "checkout": "https://square.link/u/x6925xqu",
+      "listed": true
+    },
+    {
+      "slug": "local-contractor-multi-month-project-tracker-22.html",
+      "id": "BF-PRI-3ADCF4",
+      "title": "Local Contractor Multi-Month Project Tracker",
+      "price": "9.99",
+      "checkout": "https://square.link/u/jdHRAdgp",
+      "listed": true
+    },
+    {
+      "slug": "local-contractor-subcontractor-agreement-tracker-23.html",
+      "id": "BF-PRI-A8CBB9",
+      "title": "Local Contractor Subcontractor Agreement Tracker",
+      "price": "8.99",
+      "checkout": "https://square.link/u/GnTajkhV",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-monthly-content-bundle-24.html",
+      "id": "BF-SER-9F8BF2",
+      "title": "Local service business monthly content bundle",
+      "price": "25.00",
+      "checkout": "https://square.link/u/gSVVd7Jj",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-social-media-content-kit-25.html",
+      "id": "BF-SER-9001A4",
+      "title": "Local service business social media content kit",
+      "price": "25.00",
+      "checkout": "https://square.link/u/lBXRE14v",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-equipment-maintenance-log-26.html",
+      "id": "BF-PRI-9BA66E",
+      "title": "Local Service Business Equipment Maintenance Log",
+      "price": "8.99",
+      "checkout": "https://square.link/u/h2ocT9Sa",
+      "listed": true
+    },
+    {
+      "slug": "local-contractor-business-starter-kit-28.html",
+      "id": "BF-PRI-C3D368",
+      "title": "Local Contractor Business Starter Kit",
+      "price": "7.99",
+      "checkout": "https://square.link/u/SWuQKdi9",
+      "listed": true
+    },
+    {
+      "slug": "local-contractor-job-safety-and-site-audit-set-29.html",
+      "id": "BF-PRI-A97792",
+      "title": "Local Contractor Job Safety and Site Audit Set",
+      "price": "8.99",
+      "checkout": "https://square.link/u/7jN8NpLd",
+      "listed": true
+    },
+    {
+      "slug": "local-contractor-project-handoff-and-completion-set-31.html",
+      "id": "BF-PRI-398574",
+      "title": "Local Contractor Project Handoff and Completion Set",
+      "price": "8.99",
+      "checkout": "https://square.link/u/3T2bRTAa",
+      "listed": true
+    },
+    {
+      "slug": "landscaping-business-professional-profile-service-32.html",
+      "id": "BF-SER-FC64D5",
+      "title": "Landscaping Business Professional Profile Service",
+      "price": "83.99",
+      "checkout": "https://square.link/u/M3M3nvJM",
+      "listed": true
+    },
+    {
+      "slug": "local-contractor-revenue-and-lead-management-bundle-33.html",
+      "id": "BF-PRI-317E5A",
+      "title": "Local Contractor Revenue and Lead Management Bundle",
+      "price": "10.99",
+      "checkout": "https://square.link/u/Vqo8kvM2",
+      "listed": true
+    },
+    {
+      "slug": "custom-one-page-business-website-35.html",
+      "id": null,
+      "title": "Custom One-Page Business Website",
+      "price": "199.00",
+      "checkout": "https://square.link/u/RMWwqLgp",
+      "listed": true
+    },
+    {
+      "slug": "custom-4-page-business-website-36.html",
+      "id": null,
+      "title": "Custom 4-Page Business Website",
+      "price": "449.00",
+      "checkout": "https://square.link/u/zn32CtdC",
+      "listed": true
+    },
+    {
+      "slug": "website-care-plan-1-month-40.html",
+      "id": null,
+      "title": "Website Care Plan (1 month)",
+      "price": "29.00",
+      "checkout": "https://square.link/u/qjVpXaSi",
+      "listed": true
+    },
+    {
+      "slug": "business-launch-kit-website-social-41.html",
+      "id": null,
+      "title": "Business Launch Kit (Website + Social)",
+      "price": "349.00",
+      "checkout": "https://square.link/u/kFpCYCBA",
+      "listed": true
+    },
+    {
+      "slug": "material-delivery-log-template-43.html",
+      "id": "BF-PRI-8F2C35",
+      "title": "Material Delivery Log Template",
+      "price": "7.99",
+      "checkout": "https://square.link/u/evGDzWFv",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-estimate-and-invoice-template-pack-44.html",
+      "id": "BF-PRI-5251E8",
+      "title": "Local Service Business Estimate and Invoice Template Pack",
+      "price": "7.99",
+      "checkout": "https://square.link/u/2tMw8f0z",
+      "listed": true
+    },
+    {
+      "slug": "comprehensive-project-proposal-writing-service-45.html",
+      "id": "BF-SER-5FB897",
+      "title": "Comprehensive Project Proposal Writing Service",
+      "price": "126.99",
+      "checkout": "https://square.link/u/0vxfhnl1",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-quote-and-estimate-log-46.html",
+      "id": "BF-PRI-E0D010",
+      "title": "Local Service Business Quote and Estimate Log",
+      "price": "7.99",
+      "checkout": "https://square.link/u/jpLOT4wm",
+      "listed": true
+    },
+    {
+      "slug": "premium-local-service-business-growth-copywriting-package-48.html",
+      "id": "BF-SER-20696B",
+      "title": "Premium Local Service Business Growth Copywriting Package",
+      "price": "248.99",
+      "checkout": "https://square.link/u/CEEKRSIW",
+      "listed": true
+    },
+    {
+      "slug": "premium-local-service-business-email-welcome-sequence-49.html",
+      "id": "BF-SER-24C01D",
+      "title": "Premium Local Service Business Email Welcome Sequence",
+      "price": "298.99",
+      "checkout": "https://square.link/u/PHr3XNbO",
+      "listed": true
+    }
+  ],
+  "guides": [
+    {
+      "slug": "guide-5-essential-steps-to-boost-productivity-with-a-daily-planner.html",
+      "title": "5 Essential Steps to Boost Productivity with a Daily Planner"
+    },
+    {
+      "slug": "guide-how-local-contractors-can-manage-client-projects-and-quotes-efficientl.html",
+      "title": "How Local Contractors Can Manage Client Projects and Quotes Efficiently"
+    },
+    {
+      "slug": "guide-how-local-shops-can-write-effective-social-media-captions.html",
+      "title": "How Local Shops Can Write Effective Social Media Captions"
+    },
+    {
+      "slug": "guide-how-to-build-a-realistic-morning-routine-for-consistent-productivity.html",
+      "title": "How to Build a Realistic Morning Routine for Consistent Productivity"
+    },
+    {
+      "slug": "guide-how-to-build-a-reliable-contractor-estimate-and-quote-workflow.html",
+      "title": "How to Build a Reliable Contractor Estimate and Quote Workflow"
+    },
+    {
+      "slug": "guide-how-to-build-consistent-daily-habits-without-burning-out.html",
+      "title": "How to Build Consistent Daily Habits Without Burning Out"
+    },
+    {
+      "slug": "guide-how-to-create-a-monthly-content-plan-for-your-local-service-business.html",
+      "title": "How to Create a Monthly Content Plan for Your Local Service Business"
+    },
+    {
+      "slug": "guide-how-to-follow-up-with-local-business-leads-without-being-annoying.html",
+      "title": "How to Follow Up With Local Business Leads Without Being Annoying"
+    },
+    {
+      "slug": "guide-how-to-get-local-service-business-clients-without-cold-calling.html",
+      "title": "How to Get Local Service Business Clients Without Cold Calling"
+    },
+    {
+      "slug": "guide-how-to-get-more-local-service-clients-without-paid-ads.html",
+      "title": "How to Get More Local Service Clients Without Paid Ads"
+    },
+    {
+      "slug": "guide-how-to-grow-your-local-service-business-practical-steps-for-steady-wor.html",
+      "title": "How to Grow Your Local Service Business: Practical Steps for Steady Work"
+    },
+    {
+      "slug": "guide-how-to-organize-your-morning-routine-as-a-remote-worker.html",
+      "title": "How to Organize Your Morning Routine as a Remote Worker"
+    },
+    {
+      "slug": "guide-how-to-plan-a-small-business-newsletter-without-losing-hours-every-wee.html",
+      "title": "How to Plan a Small Business Newsletter Without Losing Hours Every Week"
+    },
+    {
+      "slug": "guide-how-to-price-local-service-jobs-a-practical-guide-for-contractors-and-.html",
+      "title": "How to Price Local Service Jobs: A Practical Guide for Contractors and Trades"
+    },
+    {
+      "slug": "guide-how-to-reduce-cart-abandonment-in-your-e-commerce-store.html",
+      "title": "How to Reduce Cart Abandonment in Your E-commerce Store"
+    },
+    {
+      "slug": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+      "title": "How to Run a Local Service Business: Practical Operational Steps"
+    },
+    {
+      "slug": "guide-how-to-structure-a-contractor-website-to-convert-visitors-into-leads.html",
+      "title": "How to Structure a Contractor Website to Convert Visitors into Leads"
+    },
+    {
+      "slug": "guide-how-to-track-local-contractor-projects-without-losing-your-mind.html",
+      "title": "How to Track Local Contractor Projects Without Losing Your Mind"
+    },
+    {
+      "slug": "guide-how-to-write-a-clear-e-commerce-return-policy-that-builds-trust.html",
+      "title": "How to Write a Clear E-Commerce Return Policy That Builds Trust"
+    },
+    {
+      "slug": "guide-how-to-write-an-about-page-for-your-small-business-website.html",
+      "title": "How to Write an About Page for Your Small Business Website"
+    },
+    {
+      "slug": "guide-how-to-write-high-converting-shop-copy-that-sells.html",
+      "title": "How to Write High-Converting Shop Copy That Sells"
+    },
+    {
+      "slug": "guide-how-to-write-product-descriptions-that-convert.html",
+      "title": "How to Write Product Descriptions That Convert"
+    },
+    {
+      "slug": "guide-local-service-business-marketing-guide-practical-steps-to-get-more-cus.html",
+      "title": "Local Service Business Marketing Guide: Practical Steps to Get More Customers"
+    },
+    {
+      "slug": "guide-practical-guide-for-new-shop-owners-setting-up-your-first-months.html",
+      "title": "Practical Guide for New Shop Owners: Setting Up Your First Months"
+    },
+    {
+      "slug": "guide-practical-guide-to-scheduling-and-operations-for-local-businesses.html",
+      "title": "Practical Guide to Scheduling and Operations for Local Businesses"
+    },
+    {
+      "slug": "guide-practical-inventory-and-stock-management-guide-for-small-business-owne.html",
+      "title": "Practical Inventory and Stock Management Guide for Small Business Owners"
+    },
+    {
+      "slug": "guide-practical-small-business-copywriting-guide-how-to-write-clear-words-th.html",
+      "title": "Practical Small Business Copywriting Guide: How to Write Clear Words That Sell"
+    },
+    {
+      "slug": "guide-quarterly-planning-guide-for-local-service-businesses.html",
+      "title": "Quarterly Planning Guide for Local Service Businesses"
+    }
+  ],
+  "retired_pages": {
+    "c-planners-productivity-self-improvement.html": "c-people-looking-for-daily-planners-to-help-them-stay-organized-and-focu.html",
+    "daily-habit-tracker-pdf-3.html": "daily-habit-tracker-pdf-1.html",
+    "guide-essential-operations-guide-for-local-service-businesses.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-how-local-service-businesses-can-plan-weekly-content-without-losing-th.html": "guide-how-to-create-a-monthly-content-plan-for-your-local-service-business.html",
+    "guide-how-to-build-a-simple-small-business-marketing-plan.html": "guide-local-service-business-marketing-guide-practical-steps-to-get-more-cus.html",
+    "guide-how-to-estimate-local-contractor-job-costs-accurately.html": "guide-how-to-build-a-reliable-contractor-estimate-and-quote-workflow.html",
+    "guide-how-to-estimate-local-contractor-jobs-accurately.html": "guide-how-to-build-a-reliable-contractor-estimate-and-quote-workflow.html",
+    "guide-how-to-get-more-customer-reviews-for-your-local-service-business.html": "guide-how-to-grow-your-local-service-business-practical-steps-for-steady-wor.html",
+    "guide-how-to-get-more-repeat-customers-for-your-local-service-business.html": "guide-how-to-grow-your-local-service-business-practical-steps-for-steady-wor.html",
+    "guide-how-to-manage-local-contractor-projects-without-losing-your-mind.html": "guide-how-to-track-local-contractor-projects-without-losing-your-mind.html",
+    "guide-how-to-reduce-cart-abandonment-in-your-online-store.html": "guide-how-to-reduce-cart-abandonment-in-your-e-commerce-store.html",
+    "guide-how-to-run-a-quarterly-planning-session-for-your-local-service-busines.html": "guide-quarterly-planning-guide-for-local-service-businesses.html",
+    "guide-how-to-run-a-weekly-email-newsletter-without-losing-your-saturday.html": "guide-how-to-plan-a-small-business-newsletter-without-losing-hours-every-wee.html",
+    "guide-how-to-streamline-daily-operations-for-your-local-service-business.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-how-to-streamline-local-service-business-operations-a-practical-guide.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-how-to-track-local-contractor-projects-without-the-chaos.html": "guide-how-to-track-local-contractor-projects-without-losing-your-mind.html",
+    "guide-how-to-write-a-clear-e-commerce-return-policy-that-reduces-support-tic.html": "guide-how-to-write-a-clear-e-commerce-return-policy-that-builds-trust.html",
+    "guide-how-to-write-a-clear-e-commerce-return-policy.html": "guide-how-to-write-a-clear-e-commerce-return-policy-that-builds-trust.html",
+    "guide-how-to-write-an-about-page-for-your-independent-online-shop.html": "guide-how-to-write-an-about-page-for-your-small-business-website.html",
+    "guide-how-to-write-an-about-page-for-your-local-service-business.html": "guide-how-to-write-an-about-page-for-your-small-business-website.html",
+    "guide-how-to-write-an-about-page-that-builds-trust-with-customers.html": "guide-how-to-write-an-about-page-for-your-small-business-website.html",
+    "guide-how-to-write-e-commerce-product-descriptions-that-convert.html": "guide-how-to-write-product-descriptions-that-convert.html",
+    "guide-how-to-write-e-commerce-product-descriptions-that-sell.html": "guide-how-to-write-product-descriptions-that-convert.html",
+    "guide-how-to-write-product-descriptions-that-sell-for-e-commerce-stores.html": "guide-how-to-write-product-descriptions-that-convert.html",
+    "guide-how-to-write-product-descriptions-that-sell.html": "guide-how-to-write-product-descriptions-that-convert.html",
+    "guide-local-business-content-planning-guide-a-practical-framework.html": "guide-how-to-create-a-monthly-content-plan-for-your-local-service-business.html",
+    "guide-local-service-business-content-planning-guide.html": "guide-how-to-create-a-monthly-content-plan-for-your-local-service-business.html",
+    "guide-local-service-business-operations-guide-streamline-your-daily-workflow.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-morning-routine-planning-for-young-adults-a-step-by-step-guide.html": "guide-how-to-build-a-realistic-morning-routine-for-consistent-productivity.html",
+    "guide-practical-marketing-guide-for-local-service-businesses.html": "guide-local-service-business-marketing-guide-practical-steps-to-get-more-cus.html",
+    "guide-practical-marketing-strategies-for-local-service-businesses.html": "guide-local-service-business-marketing-guide-practical-steps-to-get-more-cus.html",
+    "guide-practical-operations-guide-for-local-service-businesses.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-practical-small-business-email-newsletter-strategy.html": "guide-how-to-plan-a-small-business-newsletter-without-losing-hours-every-wee.html",
+    "guide-practical-small-business-marketing-guide-for-steady-growth.html": "guide-local-service-business-marketing-guide-practical-steps-to-get-more-cus.html",
+    "guide-practical-steps-for-local-business-operations-and-planning.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "guide-practical-steps-for-streamlining-local-service-business-operations.html": "guide-how-to-run-a-local-service-business-practical-operational-steps.html",
+    "local-contractor-essential-bundle-4-item-set-27.html": "local-contractor-business-starter-kit-28.html",
+    "local-contractor-site-safety-and-compliance-pack-30.html": "local-contractor-job-safety-and-site-audit-set-29.html",
+    "local-contractor-site-safety-and-compliance-pack-34.html": "local-contractor-job-safety-and-site-audit-set-29.html"
+  }
+}
