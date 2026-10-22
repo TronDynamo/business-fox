@@ -1,9 +1,12 @@
 {
   "missing_secrets": [
-    "SQUARE_ACCESS_TOKEN",
-    "GMAIL_APP_PASSWORD",
     "ADMIN_PASSWORD"
   ],
-  "checked": "2026-10-22T10:39:24Z",
-  "admin_ready": false
+  "checked": "2026-10-22T10:48:58Z",
+  "admin_ready": false,
+  "cash_app_pay": {
+    "links": 40,
+    "ok": true
+  },
+  "last_order_check_ok": true
 }
