@@ -1,6 +1,6 @@
 # Site Doctor report
 
-Run: 2026-10-22T13:04:28Z
+Run: 2026-10-22T14:22:46Z
 
 Live products: 45  |  Live guides: 28  |  Redirected pages: 39
 
@@ -8,23 +8,12 @@ Live products: 45  |  Live guides: 28  |  Redirected pages: 39
 
 - Updated the New arrivals section on the homepage
 - Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in index.html
+- Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in feed.xml
 - Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in merchant.xml
-- Fixed product links in feed.xml
-- Fixed product links in merchant.xml
 - Added Owner login link to the homepage footer
-- Added Cash App Pay note to local-business-content-calendar-template-50.html
-- Added Cash App Pay note to local-business-customer-review-tracker-18.html
-- Added Cash App Pay note to local-business-email-newsletter-copywriting-12.html
-- Added Cash App Pay note to local-service-business-monthly-content-bundle-24.html
-- Added Cash App Pay note to local-service-business-quarterly-planning-bundle-17.html
-- Added Cash App Pay note to local-service-business-social-media-content-kit-25.html
-- Added Cash App Pay note to local-service-business-weekly-schedule-planner-16.html
-- Added Cash App Pay note to premium-local-service-business-growth-copywriting-package-48.html
-- Linked the premium style layer into 11 page(s)
-- Rebuilt sitemap.xml (102 pages)
+- Added Cash App Pay note to small-business-social-media-captions-package-10.html
+- Linked the premium style layer into 4 page(s)
 
 ## Problems found
 
-- feed.xml: item BF-PRI-66F87E linked to https://trondynamo.github.io/business-fox
-- merchant.xml: item BF-PRI-66F87E linked to https://trondynamo.github.io/business-fox
-- sitemap.xml was out of date
+- None.
