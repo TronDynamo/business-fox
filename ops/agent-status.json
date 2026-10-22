@@ -1,19 +1,6 @@
 {
   "_readme": "Written by the backup delivery bot. No personal data. Business-Fox: treat orders marked delivered_by_bot as already delivered (do not email them again). service_pending=true means the custom work still has to be done once the buyer sends their brief.",
-  "checked": "2026-10-22T10:48:58Z",
-  "counts": {
-    "needs_review": 1
-  },
-  "orders": [
-    {
-      "ref": "b39eb1ff1be2",
-      "paid_at": "2026-10-18T15:34:06.715Z",
-      "products": [
-        null
-      ],
-      "status": "needs_review",
-      "service_pending": false,
-      "method": "Visa"
-    }
-  ]
+  "checked": "2026-10-22T10:50:15Z",
+  "counts": {},
+  "orders": []
 }
