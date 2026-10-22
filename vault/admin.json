@@ -2,9 +2,9 @@
   "v": 1,
   "kdf": "PBKDF2-SHA256",
   "iterations": 600000,
-  "salt": "DQc4JshHwL2JaQLVZLuCLA==",
-  "iv": "ew7KBgR5n1kXcOZA",
-  "wrapped_key": "r38z9NWnmIb1LLy6iRdeQ0waEDqCFgA/tZemaFP00Rkxa+waCkXdwFsmsTu5DCnZ",
-  "password_fingerprint": "9b0ef4ad2d6093b7",
-  "created": "2026-10-22T11:05:52Z"
+  "salt": "psMhO5+uUgW4U62rEPQbow==",
+  "iv": "9V32IGS6Jn+7jAS1",
+  "wrapped_key": "Nh+tFjeI8AxWYw7P3SYLxyg50HdteADhiI2mLfR0JUmDJO/W3vJgT7D+B7QEuWL0",
+  "password_fingerprint": "d67379620fbaed7f",
+  "created": "2026-10-22T11:06:43Z"
 }
