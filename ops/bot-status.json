@@ -1,0 +1,9 @@
+{
+  "missing_secrets": [
+    "SQUARE_ACCESS_TOKEN",
+    "GMAIL_APP_PASSWORD",
+    "ADMIN_PASSWORD"
+  ],
+  "checked": "2026-10-22T10:39:24Z",
+  "admin_ready": false
+}
