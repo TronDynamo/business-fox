@@ -1,9 +1,7 @@
 {
-  "missing_secrets": [
-    "ADMIN_PASSWORD"
-  ],
-  "checked": "2026-10-22T10:48:58Z",
-  "admin_ready": false,
+  "missing_secrets": [],
+  "checked": "2026-10-22T11:05:52Z",
+  "admin_ready": true,
   "cash_app_pay": {
     "links": 40,
     "ok": true

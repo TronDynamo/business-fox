@@ -1,6 +1,6 @@
 {
-  "_readme": "Written by the backup delivery bot. No personal data. Business-Fox: treat orders marked delivered_by_bot as already delivered (do not email them again). service_pending=true means the custom work still has to be done once the buyer sends their brief.",
-  "checked": "2026-10-22T10:50:15Z",
+  "_readme": "Written by the backup delivery bot. No personal data. Business-Fox: treat orders marked delivered_by_bot as already delivered (do not email them again). website_in_progress means the questionnaire went out and the site must still be built and approved. service_pending=true means the custom work still has to be done once the buyer sends their brief.",
+  "checked": "2026-10-22T11:05:52Z",
   "counts": {},
   "orders": []
 }
