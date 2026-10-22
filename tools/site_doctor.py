@@ -338,6 +338,25 @@ def check_links():
 PAYNOTE = '<p class="muted paynote">Pay by card, Apple Pay, Google Pay or Cash App Pay.</p>'
 
 
+PREMIUM = '<link rel="stylesheet" href="assets/premium.css"><script src="assets/premium.js" defer></script>'
+
+
+def premium_layer():
+    """Link the premium style layer (assets/) into every public page. Business-Fox republishes pages without it,
+    so this re-adds it each run. Redirect stubs and the admin page are left alone."""
+    n = 0
+    for f in sorted(glob.glob("*.html")):
+        if f == "admin.html" or f.startswith("google"):
+            continue
+        s = read(f)
+        if is_stub(s) or "assets/premium.css" in s or "</head>" not in s:
+            continue
+        if write(f, s.replace("</head>", PREMIUM + "</head>", 1)):
+            n += 1
+    if n:
+        changes.append(f"Linked the premium style layer into {n} page(s)")
+
+
 def store_extras(products):
     """Owner login link in the homepage footer + Cash App note under buy buttons once the bot has enabled it."""
     s = read("index.html")
@@ -369,6 +388,7 @@ def main():
     dedupe_guides(guides)
     fix_feeds(products)
     store_extras(products)
+    premium_layer()
     rebuild_sitemap()
     check_links()
 
