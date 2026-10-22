@@ -145,5 +145,33 @@
     "slug": "local-service-business-operations-checklist-14.html",
     "pages": 8,
     "bytes": 235887
+  },
+  "BF-PRI-A7C201": {
+    "file": "vault/products/BF-PRI-A7C201.pdf.enc",
+    "title": "Small Business Bookkeeping and Expense Tracker",
+    "slug": "small-business-bookkeeping-and-expense-tracker-101.html",
+    "pages": 12,
+    "bytes": 652383
+  },
+  "BF-PRI-B3E9D4": {
+    "file": "vault/products/BF-PRI-B3E9D4.pdf.enc",
+    "title": "Client Onboarding Kit for Service Businesses",
+    "slug": "client-onboarding-kit-for-service-businesses-102.html",
+    "pages": 9,
+    "bytes": 649767
+  },
+  "BF-PRI-C51F77": {
+    "file": "vault/products/BF-PRI-C51F77.pdf.enc",
+    "title": "2027 Annual Business Planner",
+    "slug": "2027-annual-business-planner-103.html",
+    "pages": 18,
+    "bytes": 660446
+  },
+  "BF-PRI-D86A3E": {
+    "file": "vault/products/BF-PRI-D86A3E.pdf.enc",
+    "title": "Small Business Tax Prep Organizer",
+    "slug": "small-business-tax-prep-organizer-104.html",
+    "pages": 10,
+    "bytes": 649985
   }
 }

@@ -24,6 +24,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -45,7 +46,7 @@ _files = {}
 
 def read(path):
     if path not in _files:
-        _files[path] = open(path, encoding="utf-8", errors="ignore").read()
+        _files[path] = open(path, encoding="utf-8", errors="ignore").read() if os.path.exists(path) else ""
     return _files[path]
 
 
@@ -378,10 +379,76 @@ def store_extras(products):
             changes.append(f"Added Cash App Pay note to {slug}")
 
 
+# ---------------------------------------------------------------- maintainer products (tools/new_products.json)
+def _esc(t):
+    return html.escape(t, quote=True)
+
+
+def _card(p):
+    price = f"${p['price_cents'] / 100:.2f}"
+    return (f'<a class="card" href="{p["slug"]}"><img loading="lazy" src="img/{p["id"]}-cover.png" alt="{_esc(p["title"])}">'
+            f'<div><strong>{_esc(p["title"])}</strong><br><span class="price">{price}</span><br>'
+            f'<span class="muted">{_esc(p["short"])}</span></div></a>')
+
+
+def maintainer_products():
+    """Pages + a homepage 'New arrivals' section for products in tools/new_products.json (built outside Business-Fox).
+    Business-Fox regenerates index.html from his own database, so the section is re-added on every run."""
+    try:
+        items = [p for p in json.load(open("tools/new_products.json"))["products"] if p.get("square_url")]
+    except Exception:
+        return
+    if not items:
+        return
+    tpl_name = "local-service-business-weekly-schedule-planner-16.html"
+    tpl = read(tpl_name) if os.path.exists(tpl_name) else ""
+    m = re.search(r"<style>.*?</style>", tpl, re.S)
+    style = m.group(0) if m else ""
+    head_m = re.search(r"<body><header>.*?</header>", tpl, re.S)
+    foot_m = re.search(r"<footer>.*?</footer>", tpl, re.S)
+    if not (style and head_m and foot_m):
+        problems.append("Couldn't build new product pages: template page missing")
+        return
+    for p in items:
+        price = f"{p['price_cents'] / 100:.2f}"
+        url = BASE + p["slug"]
+        img = BASE + "img/" + p["id"] + "-cover.png"
+        ld = json.dumps({"@context": "https://schema.org", "@type": "Product", "name": p["title"], "description": p["short"], "image": img,
+                         "sku": p["id"], "brand": {"@type": "Brand", "name": "Business Fox"},
+                         "offers": {"@type": "Offer", "price": price, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": p["square_url"]}})
+        inc = [f"Printable PDF, {p['pages']} pages, US Letter", "Print at home as often as you like", "Personal-use licence"]
+        others = [o for o in items if o is not p][:3]
+        page = ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n'
+                f'<title>{_esc(p["title"])}</title><meta name="description" content="{_esc(p["short"])}"><link rel="canonical" href="{url}">\n'
+                f'<meta property="og:title" content="{_esc(p["title"])}"><meta property="og:type" content="product"><meta property="og:url" content="{url}">'
+                f'<meta property="og:image" content="{img}"><meta property="og:description" content="{_esc(p["short"])}"><link rel="alternate" type="application/rss+xml" href="feed.xml">\n'
+                f'<link rel="icon" href="img/favicon.png">{style}<script type="application/ld+json">{ld}</script>{PREMIUM}</head>\n'
+                f'{head_m.group(0)}\n<main><article class="product"><img src="img/{p["id"]}-cover.png" alt="{_esc(p["title"])}"><div>'
+                f'<h1>{_esc(p["title"])}</h1><p class="price">${price}</p>\n<p>{_esc(p["lead"])} You can print the pages at home as often as you need for your own business. '
+                f'Delivery happens automatically by email right after payment.</p><p>{_esc(p["body"])}</p>'
+                '<h2>Inside the PDF</h2><ul class="inc">' + "".join(f"<li>{_esc(x)}</li>" for x in p["pages_list"]) + "</ul>"
+                '<h2>What you get</h2><ul class="inc">' + "".join(f"<li>{_esc(x)}</li>" for x in inc) + "</ul>\n"
+                '<p class="muted">Delivered to your email right after payment.</p>\n<p class="muted">Made with AI tools and checked before delivery.</p>\n'
+                f'<p><a class="buy" href="{p["square_url"]}" rel="nofollow">Buy securely — ${price}</a></p>{PAYNOTE}\n'
+                f'<p><a href="mailto:{CFG["contact_email"]}?subject={urllib.parse.quote("Question about " + p["title"])}">Ask a question about this</a></p></div></article>'
+                '<h2>More like this</h2><div class="grid">' + "".join(_card(o) for o in others) + "</div></main>" + foot_m.group(0) + "</body></html>")
+        if write(p["slug"], page):
+            changes.append(f"Built product page {p['slug']}")
+    s = read("index.html")
+    block = ('<!--bf-new--><h2>New arrivals</h2><div class="grid">' + "".join(_card(p) for p in items) + "</div><!--/bf-new-->")
+    if "<!--bf-new-->" in s:
+        new = re.sub(r"<!--bf-new-->.*?<!--/bf-new-->", lambda _: block, s, count=1, flags=re.S)
+    else:
+        new = s.replace("</section>", "</section>" + block, 1)
+    if new != s and write("index.html", new):
+        changes.append("Updated the New arrivals section on the homepage")
+
+
 # ---------------------------------------------------------------- main
 def main():
     fix_emails()
     enforce_redirects()
+    maintainer_products()
     products, guides = inventory()
     apply_renames(products)
     dedupe_products(products)

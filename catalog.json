@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-22T11:16:42Z",
+  "updated": "2026-10-22T11:18:37Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -321,6 +321,38 @@
       "title": "Premium Local Service Business Email Welcome Sequence",
       "price": "298.99",
       "checkout": "https://square.link/u/PHr3XNbO",
+      "listed": true
+    },
+    {
+      "slug": "small-business-bookkeeping-and-expense-tracker-101.html",
+      "id": "BF-PRI-A7C201",
+      "title": "Small Business Bookkeeping and Expense Tracker",
+      "price": "7.99",
+      "checkout": "https://square.link/u/KMH8Zq26",
+      "listed": true
+    },
+    {
+      "slug": "client-onboarding-kit-for-service-businesses-102.html",
+      "id": "BF-PRI-B3E9D4",
+      "title": "Client Onboarding Kit for Service Businesses",
+      "price": "9.99",
+      "checkout": "https://square.link/u/1FSI324B",
+      "listed": true
+    },
+    {
+      "slug": "2027-annual-business-planner-103.html",
+      "id": "BF-PRI-C51F77",
+      "title": "2027 Annual Business Planner",
+      "price": "12.99",
+      "checkout": "https://square.link/u/bKjztuVI",
+      "listed": true
+    },
+    {
+      "slug": "small-business-tax-prep-organizer-104.html",
+      "id": "BF-PRI-D86A3E",
+      "title": "Small Business Tax Prep Organizer",
+      "price": "8.99",
+      "checkout": "https://square.link/u/tT4lwdq4",
       "listed": true
     }
   ],
