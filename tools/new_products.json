@@ -1,0 +1,25 @@
+{
+  "_note": "Products added by the store maintainer (not Business-Fox). PDFs are in vault/products, delivered by the Delivery Bot. square_links.py fills in the Square links.",
+  "products": [
+    {"id": "BF-PRI-A7C201", "slug": "small-business-bookkeeping-and-expense-tracker-101.html", "title": "Small Business Bookkeeping and Expense Tracker", "price_cents": 799, "pages": 12,
+     "short": "Printable 12-page bookkeeping PDF: income and expense logs, mileage, bills, unpaid invoices and a monthly profit summary.",
+     "lead": "Know where every dollar came from and where it went. The Small Business Bookkeeping and Expense Tracker is a 12-page printable PDF in US Letter format for owners who want simple, paper-based books without accounting software.",
+     "body": "Log income and expenses as they happen, keep a mileage record for tax time, watch unpaid invoices, and total everything on the monthly summary page. The quarterly profit review shows your biggest costs so you can fix them. Hand the notes page to your accountant at year end.",
+     "pages_list": ["Bookkeeping setup and categories", "Income log (2 pages)", "Expense log (2 pages)", "Mileage log", "Receipt and bill tracker", "Unpaid invoices", "Monthly summary", "Quarterly profit review", "Notes for your accountant"]},
+    {"id": "BF-PRI-B3E9D4", "slug": "client-onboarding-kit-for-service-businesses-102.html", "title": "Client Onboarding Kit for Service Businesses", "price_cents": 999, "pages": 9,
+     "short": "Printable 9-page onboarding kit: welcome checklist, intake forms, scope and timeline, kickoff notes and a 30-day feedback page.",
+     "lead": "Start every new client the same professional way. The Client Onboarding Kit is a 9-page printable PDF in US Letter format for service businesses that want fewer surprises and happier clients.",
+     "body": "Use the welcome checklist the day a client says yes, fill in the intake form on the first call, and agree what is and isn't included on the scope and timeline page, with signatures. Track every new client on the onboarding board and ask for feedback and a review after 30 days.",
+     "pages_list": ["New client welcome checklist", "Client intake form (2 copies)", "Scope of work and timeline with sign-off", "Kickoff call notes", "Client onboarding board", "Communication log", "30-day check-in and feedback"]},
+    {"id": "BF-PRI-C51F77", "slug": "2027-annual-business-planner-103.html", "title": "2027 Annual Business Planner", "price_cents": 1299, "pages": 18,
+     "short": "Printable 18-page 2027 planner: yearly goals, quarterly targets, a page for every month, quarterly reviews and a year-end review.",
+     "lead": "Set your goals for 2027 and plan every month. The 2027 Annual Business Planner is an 18-page printable PDF in US Letter format for small business owners who want a clear plan for the year.",
+     "body": "Write your revenue, profit and client goals on the year-at-a-glance page, break them into four quarterly targets, then plan each month with its own page for priorities, weekly focus, marketing and lessons learned. Review what worked every quarter and finish the year with a full review.",
+     "pages_list": ["2027 at a glance", "Quarterly targets", "12 monthly planning pages (January to December 2027)", "Quarterly review (2 pages)", "2027 year-end review"]},
+    {"id": "BF-PRI-D86A3E", "slug": "small-business-tax-prep-organizer-104.html", "title": "Small Business Tax Prep Organizer", "price_cents": 899, "pages": 10,
+     "short": "Printable 10-page tax organizer: document checklist, income and expense totals, assets, mileage, home office and estimated payments.",
+     "lead": "Get everything your tax preparer will ask for in one place. The Small Business Tax Prep Organizer is a 10-page printable PDF in US Letter format for sole proprietors and small business owners.",
+     "body": "Tick off each document as you gather it, total income and expenses by quarter, and list equipment purchases, vehicle miles, home-office details, estimated tax payments and the contractors you paid. It is an organizer, not tax advice: hand it to your tax preparer.",
+     "pages_list": ["Business and preparer details", "Document checklist", "Income summary by category", "Expense summary by category", "Equipment and asset purchases", "Vehicle and home office", "Estimated tax payments", "Contractors I paid", "Questions for your tax preparer"]}
+  ]
+}
