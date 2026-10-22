@@ -1,0 +1,44 @@
+name: Admin Setup
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  setup:
+    # only the store owner can create or reset the admin login
+    if: github.event.issue.title == 'Admin setup' && github.event.issue.user.login == github.repository_owner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet cryptography==43.0.3
+      - name: Save owner login
+        id: save
+        env:
+          VAULT_KEY: ${{ secrets.VAULT_KEY }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python tools/admin_setup.py
+      - name: Commit
+        run: |
+          git config user.name "Admin Setup"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vault/admin.json
+          git commit -q -m "Owner login created"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*10)); done
+      - name: Close issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ steps.save.outcome }}" = "success" ]; then msg="Done. Your owner login is saved. Go back to the admin page and sign in with your new password."; else msg="Setup failed. Open the admin page and try again."; fi
+          gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} --body "$msg"
+          gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }}
+          # remove the setup data from the issue now that it's saved
+          gh issue edit ${{ github.event.issue.number }} --repo ${{ github.repository }} --body "Admin setup request (data removed after processing)."

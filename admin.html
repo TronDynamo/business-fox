@@ -75,7 +75,7 @@ code{background:var(--bg);padding:1px 5px;border-radius:4px;font-size:13px}
 <main>
 
 <section id="loginView" class="login">
-  <div class="card">
+  <div class="card" id="loginCard">
     <h1>Owner sign in</h1>
     <p class="muted" style="margin:0">Orders, buyer emails and product downloads.</p>
     <form id="loginForm" autocomplete="on">
@@ -87,14 +87,24 @@ code{background:var(--bg);padding:1px 5px;border-radius:4px;font-size:13px}
       <div class="err" id="loginErr" role="alert"></div>
     </form>
   </div>
-  <div class="card hidden" id="setupCard" style="margin-top:14px">
-    <h1 style="font-size:18px">Admin login isn't set up yet</h1>
-    <ol class="check muted" style="padding-left:18px">
-      <li>On GitHub open <b>business-fox &gt; Settings &gt; Secrets and variables &gt; Actions</b>.</li>
-      <li>Add a secret named <code>ADMIN_PASSWORD</code> with the password you want (12+ characters).</li>
-      <li>Open <b>Actions &gt; Delivery Bot &gt; Run workflow</b> (or wait up to 10 minutes).</li>
-      <li>Come back here and sign in with <b>godzilla9zjb@gmail.com</b> and that password.</li>
-    </ol>
+  <div class="card hidden" id="createCard">
+    <h1>Create your owner password</h1>
+    <p class="muted" style="margin:0">First time here. Pick the password you'll use to sign in. It never leaves this browser.</p>
+    <form id="createForm">
+      <label for="cemail">Email</label>
+      <input id="cemail" type="email" autocomplete="username" required>
+      <label for="cpw">New password (12+ characters)</label>
+      <input id="cpw" type="password" autocomplete="new-password" minlength="12" required>
+      <label for="cpw2">Confirm password</label>
+      <input id="cpw2" type="password" autocomplete="new-password" minlength="12" required>
+      <button class="primary" id="createBtn" type="submit">Create password</button>
+      <div class="err" id="createErr" role="alert"></div>
+    </form>
+    <div id="createNext" class="hidden">
+      <p><b>One last step.</b> A GitHub page opened in a new tab with your encrypted setup request. Make sure you're signed in to GitHub as <b>TronDynamo</b>, then click <b>Submit new issue</b>.</p>
+      <p class="muted">If the tab didn't open, <a id="issueLink" target="_blank" rel="noopener">open it here</a>. This page signs you in automatically once it's saved, usually within a minute.</p>
+      <p class="muted" id="waitMsg">Waiting for GitHub...</p>
+    </div>
   </div>
 </section>
 
@@ -164,8 +174,13 @@ async function unlock(email, pw){
   const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
   const kek = await crypto.subtle.deriveKey({name: "PBKDF2", hash: "SHA-256", salt: b64(a.salt), iterations: a.iterations},
                                             base, {name: "AES-GCM", length: 256}, false, ["decrypt"]);
-  const raw = await crypto.subtle.decrypt({name: "AES-GCM", iv: b64(a.iv), additionalData: new TextEncoder().encode(email.trim().toLowerCase())},
-                                          kek, b64(a.wrapped_key));
+  const aad = new TextEncoder().encode(email.trim().toLowerCase());
+  if (a.v === 2) {
+    const pk = await crypto.subtle.decrypt({name: "AES-GCM", iv: b64(a.iv), additionalData: aad}, kek, b64(a.enc_private_key));
+    const priv = await crypto.subtle.importKey("pkcs8", pk, {name: "RSA-OAEP", hash: "SHA-256"}, false, ["decrypt"]);
+    return new Uint8Array(await crypto.subtle.decrypt({name: "RSA-OAEP"}, priv, b64(a.wrapped_key_rsa)));
+  }
+  const raw = await crypto.subtle.decrypt({name: "AES-GCM", iv: b64(a.iv), additionalData: aad}, kek, b64(a.wrapped_key));
   return new Uint8Array(raw);
 }
 
@@ -178,7 +193,7 @@ $("#loginForm").addEventListener("submit", async e => {
     KEY = await importKey(raw);
     await start();
   } catch (err) {
-    if (err.message === "setup") { $("#setupCard").classList.remove("hidden"); $("#loginErr").textContent = "Admin login hasn't been created yet."; }
+    if (err.message === "setup") showCreate();
     else $("#loginErr").textContent = "Wrong email or password.";
   } finally { btn.disabled = false; btn.textContent = "Sign in"; }
 });
@@ -287,17 +302,54 @@ function renderBot(){
     <ul class="check" style="list-style:none;padding:0">
       ${item(!miss.includes("SQUARE_ACCESS_TOKEN"), "Square access token (<code>SQUARE_ACCESS_TOKEN</code>)")}
       ${item(!miss.includes("GMAIL_APP_PASSWORD"), "Gmail app password (<code>GMAIL_APP_PASSWORD</code>)")}
-      ${item(!!STATUS.admin_ready, "Admin password (<code>ADMIN_PASSWORD</code>)")}
+      ${item(true, "Owner password created")}
       ${item(ca && ca.ok, "Cash App Pay on payment links" + (ca && ca.ok ? ` (${ca.links} links checked)` : ""))}
     </ul>
     <p class="muted" style="margin-bottom:0">Last check: ${STATUS.checked ? when(STATUS.checked) : "never"}.</p>`;
 }
 
+const enc64 = buf => btoa(String.fromCharCode(...new Uint8Array(buf)));
+function showCreate(){ $("#loginCard").classList.add("hidden"); $("#createCard").classList.remove("hidden"); $("#cemail").value = OWNER_HINT; }
+$("#createForm").addEventListener("submit", async e => {
+  e.preventDefault(); const err = $("#createErr"); err.textContent = "";
+  const email = $("#cemail").value.trim().toLowerCase(), pw = $("#cpw").value;
+  if (pw.length < 12) return err.textContent = "Use at least 12 characters.";
+  if (pw !== $("#cpw2").value) return err.textContent = "The passwords don't match.";
+  if (email !== OWNER_HINT) return err.textContent = "Use the store owner email (" + OWNER_HINT + ").";
+  const btn = $("#createBtn"); btn.disabled = true; btn.textContent = "Encrypting...";
+  try {
+    const pair = await crypto.subtle.generateKey({name: "RSA-OAEP", modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]), hash: "SHA-256"}, true, ["encrypt", "decrypt"]);
+    const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12)), iterations = 600000;
+    const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+    const kek = await crypto.subtle.deriveKey({name: "PBKDF2", hash: "SHA-256", salt, iterations}, base, {name: "AES-GCM", length: 256}, false, ["encrypt"]);
+    const pk = await crypto.subtle.exportKey("pkcs8", pair.privateKey);
+    const encPk = await crypto.subtle.encrypt({name: "AES-GCM", iv, additionalData: new TextEncoder().encode(email)}, kek, pk);
+    const req = {public_key: enc64(await crypto.subtle.exportKey("spki", pair.publicKey)), enc_private_key: enc64(encPk), salt: enc64(salt), iv: enc64(iv), iterations};
+    const body = "Creates the owner login for the Business Fox admin page. Contains only a public key and an encrypted private key; the password is not included.\n\nBEGIN-ADMIN-SETUP\n" + JSON.stringify(req) + "\nEND-ADMIN-SETUP";
+    const url = "https://github.com/TronDynamo/business-fox/issues/new?title=" + encodeURIComponent("Admin setup") + "&body=" + encodeURIComponent(body);
+    $("#issueLink").href = url; window.open(url, "_blank", "noopener");
+    $("#createForm").classList.add("hidden"); $("#createNext").classList.remove("hidden");
+    const started = Date.now();
+    const poll = async () => {
+      const r = await fresh("vault/admin.json");
+      if (r.ok) {
+        $("#waitMsg").textContent = "Saved. Signing you in...";
+        try { const raw = await unlock(email, pw); sessionStorage.setItem("bfk", btoa(String.fromCharCode(...raw))); KEY = await importKey(raw); $("#createCard").classList.add("hidden"); return start(); }
+        catch { $("#waitMsg").textContent = "Saved, but this password didn't unlock it. Refresh and sign in, or create it again."; return; }
+      }
+      $("#waitMsg").textContent = "Waiting for GitHub... (" + Math.round((Date.now() - started) / 1000) + "s)";
+      setTimeout(poll, 8000);
+    };
+    setTimeout(poll, 15000);
+  } catch (x) { err.textContent = "Something went wrong: " + x.message; }
+  finally { btn.disabled = false; btn.textContent = "Create password"; }
+});
+
 (async () => {
   const k = sessionStorage.getItem("bfk");
   if (k) { try { KEY = await importKey(b64(k)); await start(); return; } catch { sessionStorage.removeItem("bfk"); } }
   $("#email").value = OWNER_HINT;
-  fresh("vault/admin.json").then(r => { if (!r.ok) $("#setupCard").classList.remove("hidden"); });
+  fresh("vault/admin.json").then(r => { if (!r.ok) showCreate(); });
 })();
 </script>
 </body>

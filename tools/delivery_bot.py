@@ -365,7 +365,7 @@ def write_json_if_changed(path, doc, ignore=("checked",)):
 # ------------------------------------------------------------------ main
 def main():
     key = vault_key()
-    missing = [s for s in ("VAULT_KEY", "SQUARE_ACCESS_TOKEN", "GMAIL_APP_PASSWORD", "ADMIN_PASSWORD") if not os.environ.get(s)]
+    missing = [s for s in ("VAULT_KEY", "SQUARE_ACCESS_TOKEN", "GMAIL_APP_PASSWORD") if not os.environ.get(s)]
     status = json.load(open(STATUS_FILE)) if os.path.exists(STATUS_FILE) else {}
     status.update({"missing_secrets": missing, "checked": NOW.strftime("%Y-%m-%dT%H:%M:%SZ")})
     if not key:
