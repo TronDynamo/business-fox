@@ -1,6 +1,6 @@
 # Site Doctor report
 
-Run: 2026-10-22T13:01:18Z
+Run: 2026-10-22T13:04:28Z
 
 Live products: 45  |  Live guides: 28  |  Redirected pages: 39
 
@@ -9,6 +9,7 @@ Live products: 45  |  Live guides: 28  |  Redirected pages: 39
 - Updated the New arrivals section on the homepage
 - Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in index.html
 - Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in merchant.xml
+- Fixed product links in feed.xml
 - Fixed product links in merchant.xml
 - Added Owner login link to the homepage footer
 - Added Cash App Pay note to local-business-content-calendar-template-50.html
@@ -24,5 +25,6 @@ Live products: 45  |  Live guides: 28  |  Redirected pages: 39
 
 ## Problems found
 
+- feed.xml: item BF-PRI-66F87E linked to https://trondynamo.github.io/business-fox
 - merchant.xml: item BF-PRI-66F87E linked to https://trondynamo.github.io/business-fox
 - sitemap.xml was out of date
