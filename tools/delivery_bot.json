@@ -1,0 +1,15 @@
+{
+  "store_name": "Business Fox",
+  "store_url": "https://trondynamo.github.io/business-fox/",
+  "store_email": "godzilla9zjb@gmail.com",
+  "owner_email": "godzilla9zjb@gmail.com",
+  "grace_minutes": 30,
+  "max_auto_send_hours": 72,
+  "history_days_first_run": 30,
+  "lookback_days": 3,
+  "match_threshold": 0.55,
+  "send_if_gmail_unavailable": true,
+  "enable_cash_app_pay": true,
+  "owner_alerts": true,
+  "square_item_map": {}
+}

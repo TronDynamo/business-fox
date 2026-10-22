@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Business Fox Admin</title>
+<link rel="icon" href="img/favicon.png">
+<style>
+:root{--bg:#f7f4ee;--ink:#121630;--muted:#5b6080;--card:#fff;--line:#e4dfd3;--accent:#fc812b;--navy:#121630;--gold:#d4af37;--gold2:#ffd75a;--lav:#8f9bd0;--ok:#1f7a4d;--okbg:#e3f3ea;--warn:#8a5a00;--warnbg:#fff1d6;--bad:#a12a2a;--badbg:#fbe4e4;--info:#2c4a9a;--infobg:#e6ecfb}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1024;--ink:#f2ebee;--muted:#8f9bd0;--card:#161b3a;--line:#2a3160;--okbg:#123826;--ok:#7fd8a7;--warnbg:#3a2c0c;--warn:#ffd27a;--badbg:#3d1616;--bad:#ff9b9b;--infobg:#1b2756;--info:#a9bcff}}
+@font-face{font-family:Pixel;src:url(img/PressStart2P.ttf)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{background:var(--navy);border-bottom:4px solid var(--accent)}
+.bar{max-width:1180px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;color:#f2ebee}
+.bar img{width:38px;height:38px;image-rendering:pixelated}
+.brand{font-family:Pixel,monospace;font-size:13px;color:var(--gold2);text-decoration:none}
+.bar .sp{flex:1}
+.bar a.link{color:var(--lav);font-size:14px}
+main{max-width:1180px;margin:0 auto;padding:22px 16px 60px}
+h1{font-size:22px;margin:0 0 4px}
+.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.login{max-width:420px;margin:40px auto}
+label{display:block;font-weight:600;font-size:13px;margin:14px 0 6px}
+input,select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
+button,.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:8px;border:1px solid var(--navy);background:var(--navy);color:#fff;font:600 14px system-ui,sans-serif;cursor:pointer;text-decoration:none;white-space:nowrap}
+button.primary{background:var(--accent);border-color:var(--accent);color:#121630;width:100%;justify-content:center;margin-top:18px;padding:11px}
+button.ghost,.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+button.sm,.btn.sm{padding:5px 9px;font-size:12.5px}
+button:disabled{opacity:.6;cursor:wait}
+.err{color:var(--bad);font-size:14px;margin-top:12px;min-height:1em}
+.tabs{display:flex;gap:6px;margin:20px 0 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.tabs button{background:transparent;color:var(--muted);border:none;border-bottom:3px solid transparent;border-radius:0;padding:10px 14px}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
+.stat b{display:block;font-size:24px;font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--muted)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.tools input{max-width:300px}.tools select{max-width:230px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:600;white-space:nowrap}
+.ok{background:var(--okbg);color:var(--ok)}.warn{background:var(--warnbg);color:var(--warn)}.bad{background:var(--badbg);color:var(--bad)}.info{background:var(--infobg);color:var(--info)}
+.acts{display:flex;gap:6px;flex-wrap:wrap}
+details summary{cursor:pointer;color:var(--muted);font-size:12.5px}
+details ul{margin:6px 0 0;padding-left:18px;font-size:12.5px;color:var(--muted)}
+.empty{padding:40px 16px;text-align:center;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.prod{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.prod small{color:var(--muted)}
+.check li{margin:6px 0}
+.hidden{display:none!important}
+@media (max-width:720px){
+ .stats{grid-template-columns:1fr 1fr}.stat b{font-size:20px}.stat{padding:12px}
+ .bar .muted{display:none}.brand{font-size:11px}
+ .tools input,.tools select{max-width:none}
+ .tablewrap{border:none;background:transparent}
+ table,tbody,tr,td{display:block;width:100%}thead{display:none}
+ tr{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:6px 4px}
+ td{border:none;padding:6px 12px}
+ td[data-l]::before{content:attr(data-l);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+}
+code{background:var(--bg);padding:1px 5px;border-radius:4px;font-size:13px}
+</style>
+</head>
+<body>
+<header><div class="bar"><img src="img/logo.png" alt=""><a class="brand" href="index.html">Business Fox</a><span class="muted" style="color:var(--lav)">Admin</span><span class="sp"></span><a class="link" href="index.html">View store</a><button id="logout" class="ghost sm hidden" style="color:#f2ebee;border-color:#2a3160">Sign out</button></div></header>
+<main>
+
+<section id="loginView" class="login">
+  <div class="card">
+    <h1>Owner sign in</h1>
+    <p class="muted" style="margin:0">Orders, buyer emails and product downloads.</p>
+    <form id="loginForm" autocomplete="on">
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="username" required>
+      <label for="pw">Password</label>
+      <input id="pw" type="password" autocomplete="current-password" required>
+      <button class="primary" id="loginBtn" type="submit">Sign in</button>
+      <div class="err" id="loginErr" role="alert"></div>
+    </form>
+  </div>
+  <div class="card hidden" id="setupCard" style="margin-top:14px">
+    <h1 style="font-size:18px">Admin login isn't set up yet</h1>
+    <ol class="check muted" style="padding-left:18px">
+      <li>On GitHub open <b>business-fox &gt; Settings &gt; Secrets and variables &gt; Actions</b>.</li>
+      <li>Add a secret named <code>ADMIN_PASSWORD</code> with the password you want (12+ characters).</li>
+      <li>Open <b>Actions &gt; Delivery Bot &gt; Run workflow</b> (or wait up to 10 minutes).</li>
+      <li>Come back here and sign in with <b>godzilla9zjb@gmail.com</b> and that password.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="appView" class="hidden">
+  <h1>Store admin</h1>
+  <p class="muted" id="lastCheck" style="margin:0">&nbsp;</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="orders">Orders</button>
+    <button role="tab" aria-selected="false" data-tab="products">Products</button>
+    <button role="tab" aria-selected="false" data-tab="bot">Delivery bot</button>
+  </div>
+
+  <div id="tab-orders">
+    <div class="stats" id="stats"></div>
+    <div class="tools">
+      <input id="q" type="search" placeholder="Search email, name or product">
+      <select id="filter">
+        <option value="">All orders</option>
+        <option value="attention">Needs attention</option>
+        <option value="delivered_by_bot">Delivered by bot</option>
+        <option value="delivered_by_ai">Delivered (email found)</option>
+        <option value="waiting_for_ai">Waiting for AI</option>
+        <option value="service">Service work pending</option>
+      </select>
+      <span class="sp" style="flex:1"></span>
+      <button class="ghost" id="csv">Export CSV</button>
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Paid</th><th>Buyer</th><th>Product</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+  </div>
+
+  <div id="tab-products" class="hidden">
+    <p class="muted">Printable products are stored encrypted in the store. Download any file to send it by hand.</p>
+    <div class="grid" id="prodGrid"></div>
+    <h2 style="font-size:16px;margin:26px 0 8px">Services and websites</h2>
+    <p class="muted" style="margin-top:0">Custom work. No file to send. The bot emails the buyer asking for their brief.</p>
+    <div class="grid" id="svcGrid"></div>
+  </div>
+
+  <div id="tab-bot" class="hidden">
+    <div class="card" id="botCard"></div>
+  </div>
+</section>
+</main>
+
+<script>
+const OWNER_HINT = "godzilla9zjb@gmail.com";
+const $ = s => document.querySelector(s);
+const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+const fresh = p => fetch(p + (p.includes("?") ? "&" : "?") + "t=" + Date.now(), {cache: "no-store"});
+let KEY = null, ORDERS = [], MANIFEST = {}, CATALOG = null, STATUS = {};
+
+async function importKey(raw){ return crypto.subtle.importKey("raw", raw, "AES-GCM", false, ["decrypt"]); }
+async function decrypt(key, buf, aad){
+  const u = new Uint8Array(buf);
+  const p = {name: "AES-GCM", iv: u.slice(0, 12)};
+  if (aad) p.additionalData = new TextEncoder().encode(aad);
+  return crypto.subtle.decrypt(p, key, u.slice(12));
+}
+async function unlock(email, pw){
+  const r = await fresh("vault/admin.json");
+  if (!r.ok) throw new Error("setup");
+  const a = await r.json();
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+  const kek = await crypto.subtle.deriveKey({name: "PBKDF2", hash: "SHA-256", salt: b64(a.salt), iterations: a.iterations},
+                                            base, {name: "AES-GCM", length: 256}, false, ["decrypt"]);
+  const raw = await crypto.subtle.decrypt({name: "AES-GCM", iv: b64(a.iv), additionalData: new TextEncoder().encode(email.trim().toLowerCase())},
+                                          kek, b64(a.wrapped_key));
+  return new Uint8Array(raw);
+}
+
+$("#loginForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const btn = $("#loginBtn"); btn.disabled = true; btn.textContent = "Unlocking..."; $("#loginErr").textContent = "";
+  try {
+    const raw = await unlock($("#email").value, $("#pw").value);
+    sessionStorage.setItem("bfk", btoa(String.fromCharCode(...raw)));
+    KEY = await importKey(raw);
+    await start();
+  } catch (err) {
+    if (err.message === "setup") { $("#setupCard").classList.remove("hidden"); $("#loginErr").textContent = "Admin login hasn't been created yet."; }
+    else $("#loginErr").textContent = "Wrong email or password.";
+  } finally { btn.disabled = false; btn.textContent = "Sign in"; }
+});
+$("#logout").onclick = () => { sessionStorage.removeItem("bfk"); location.reload(); };
+
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", x === b));
+  ["orders", "products", "bot"].forEach(t => $("#tab-" + t).classList.toggle("hidden", t !== b.dataset.tab));
+});
+
+const LABEL = {
+  delivered_by_bot: ["Delivered by bot", "ok"], delivered_by_ai: ["Delivered (email found)", "ok"], manual_done: ["Delivered manually", "ok"],
+  waiting_for_ai: ["Waiting for AI", "info"], needs_review: ["Needs attention", "bad"], delivery_failed: ["Send failed", "bad"], not_paid: ["Not paid / refunded", "warn"]
+};
+const money = n => "$" + Number(n || 0).toFixed(2);
+const when = s => new Date(s).toLocaleString([], {month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit"});
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const needsAttention = o => ["needs_review", "delivery_failed"].includes(o.status);
+
+async function start(){
+  $("#loginView").classList.add("hidden"); $("#appView").classList.remove("hidden"); $("#logout").classList.remove("hidden");
+  const [m, c, s] = await Promise.all([fresh("vault/products.json"), fresh("catalog.json"), fresh("ops/bot-status.json")]);
+  MANIFEST = m.ok ? await m.json() : {}; CATALOG = c.ok ? await c.json() : {products: []}; STATUS = s.ok ? await s.json() : {};
+  const r = await fresh("vault/orders.json.enc");
+  if (r.ok) {
+    const data = JSON.parse(new TextDecoder().decode(await decrypt(KEY, await r.arrayBuffer(), "orders")));
+    ORDERS = Object.values(data.orders || {}).sort((a, b) => b.paid_at.localeCompare(a.paid_at));
+  }
+  $("#lastCheck").textContent = STATUS.checked ? "Bot last checked " + when(STATUS.checked) : "The bot hasn't checked Square yet.";
+  renderOrders(); renderProducts(); renderBot();
+}
+
+function renderOrders(){
+  const paid = ORDERS.filter(o => o.payment_status === "COMPLETED");
+  $("#stats").innerHTML = [
+    [ORDERS.length, "Orders"], [money(paid.reduce((t, o) => t + o.amount, 0)), "Paid revenue"],
+    [ORDERS.filter(needsAttention).length, "Need attention"], [ORDERS.filter(o => o.status === "delivered_by_bot").length, "Sent by the bot"],
+    [ORDERS.filter(o => o.service_pending).length, "Service work pending"]
+  ].map(([v, l]) => `<div class="card stat"><b>${v}</b><span>${l}</span></div>`).join("");
+  const q = $("#q").value.trim().toLowerCase(), f = $("#filter").value;
+  const list = ORDERS.filter(o => {
+    if (f === "attention" && !needsAttention(o)) return false;
+    if (f === "service" && !o.service_pending) return false;
+    if (f && !["attention", "service"].includes(f) && o.status !== f) return false;
+    if (!q) return true;
+    return [o.email, o.buyer_name, ...o.items.map(i => i.product_title || i.square_name)].join(" ").toLowerCase().includes(q);
+  });
+  if (!list.length) { $("#rows").innerHTML = `<tr><td colspan="6" class="empty">${ORDERS.length ? "No orders match." : "No orders yet. Paid Square orders show up here within about 10 minutes."}</td></tr>`; return; }
+  $("#rows").innerHTML = list.map(o => {
+    const [lab, cls] = LABEL[o.status] || [o.status, "info"];
+    const prods = o.items.map(i => esc(i.product_title || i.square_name || "Unknown item")).join("<br>");
+    const files = o.items.filter(i => i.product_id && MANIFEST[i.product_id]);
+    const subj = encodeURIComponent("Your Business Fox order: " + o.items.map(i => i.product_title || i.square_name).join(", "));
+    const body = encodeURIComponent(`Hi ${(o.buyer_name || "").split(" ")[0] || "there"},\n\nThank you for your order. ${files.length ? "Your file is attached to this email." : "Please reply with your brief so we can get started."}\n\nThanks again,\nBusiness Fox`);
+    return `<tr>
+      <td data-l="Paid" class="num">${when(o.paid_at)}</td>
+      <td data-l="Buyer">${esc(o.buyer_name || "")}${o.buyer_name ? "<br>" : ""}<span class="muted">${esc(o.email || "No email on payment")}</span></td>
+      <td data-l="Product">${prods}${o.service_pending ? '<br><span class="pill warn">Service work to do</span>' : ""}</td>
+      <td data-l="Amount" class="num">${money(o.amount)}<br><span class="muted">${esc(o.method || "")}</span></td>
+      <td data-l="Status"><span class="pill ${cls}">${lab}</span>
+        <details><summary>History</summary><ul>${(o.history || []).map(h => `<li>${when(h.at)}: ${esc(h.note)}</li>`).join("")}</ul></details></td>
+      <td data-l="Actions"><div class="acts">
+        ${files.map(i => `<button class="sm" data-dl="${i.product_id}">Download PDF</button>`).join("")}
+        ${o.email ? `<a class="btn sm ghost" href="mailto:${esc(o.email)}?subject=${subj}&body=${body}">Email buyer</a><button class="sm ghost" data-copy="${esc(o.email)}">Copy email</button>` : ""}
+        ${o.receipt_url ? `<a class="btn sm ghost" href="${esc(o.receipt_url)}" target="_blank" rel="noopener">Receipt</a>` : ""}
+      </div></td></tr>`;
+  }).join("");
+}
+$("#q").oninput = renderOrders; $("#filter").onchange = renderOrders;
+
+document.addEventListener("click", async e => {
+  const dl = e.target.closest("[data-dl]"), cp = e.target.closest("[data-copy]");
+  if (cp) { await navigator.clipboard.writeText(cp.dataset.copy); cp.textContent = "Copied"; setTimeout(() => cp.textContent = "Copy email", 1500); }
+  if (dl) {
+    const m = MANIFEST[dl.dataset.dl]; const t = dl.textContent; dl.disabled = true; dl.textContent = "Decrypting...";
+    try {
+      const r = await fresh(m.file); const pdf = await decrypt(KEY, await r.arrayBuffer());
+      const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([pdf], {type: "application/pdf"}));
+      a.download = m.title.replace(/[^A-Za-z0-9 \-]/g, "").trim() + ".pdf"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    } catch { alert("Could not decrypt this file."); }
+    dl.disabled = false; dl.textContent = t;
+  }
+});
+
+$("#csv").onclick = () => {
+  const head = ["paid_at", "buyer_name", "email", "products", "amount", "method", "payment_status", "status", "service_pending", "payment_id"];
+  const rows = ORDERS.map(o => [o.paid_at, o.buyer_name, o.email, o.items.map(i => i.product_title || i.square_name).join(" | "), o.amount, o.method, o.payment_status, o.status, !!o.service_pending, o.payment_id]);
+  const csv = [head, ...rows].map(r => r.map(v => `"${String(v ?? "").replace(/"/g, '""')}"`).join(",")).join("\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], {type: "text/csv"})); a.download = "business-fox-orders.csv"; a.click();
+};
+
+function renderProducts(){
+  const ids = Object.keys(MANIFEST).sort((a, b) => MANIFEST[a].title.localeCompare(MANIFEST[b].title));
+  $("#prodGrid").innerHTML = ids.map(id => `<div class="card prod"><div><b>${esc(MANIFEST[id].title)}</b><br><small>${MANIFEST[id].pages} pages · ${(MANIFEST[id].bytes / 1024 | 0)} KB · ${id}</small></div><button class="sm" data-dl="${id}">Download</button></div>`).join("") || '<p class="muted">No product files yet.</p>';
+  const svc = (CATALOG.products || []).filter(p => !(p.id || "").startsWith("BF-PRI"));
+  $("#svcGrid").innerHTML = svc.map(p => `<div class="card prod"><div><b>${esc(p.title)}</b><br><small>$${esc(p.price)} · custom work</small></div><a class="btn sm ghost" href="${esc(p.slug)}">Page</a></div>`).join("");
+}
+
+function renderBot(){
+  const miss = STATUS.missing_secrets || ["VAULT_KEY", "SQUARE_ACCESS_TOKEN", "GMAIL_APP_PASSWORD", "ADMIN_PASSWORD"];
+  const ca = STATUS.cash_app_pay;
+  const item = (ok, t) => `<li><span class="pill ${ok ? "ok" : "warn"}">${ok ? "Ready" : "To do"}</span> ${t}</li>`;
+  $("#botCard").innerHTML = `<h1 style="font-size:18px">Backup delivery bot</h1>
+    <p class="muted">Runs every 10 minutes on GitHub. It only acts on <b>completed</b> Square payments (card, Apple Pay, Google Pay, Cash App Pay), gives Business-Fox 30 minutes to deliver first, then checks the store Gmail Sent folder. If no email went to the buyer, it sends the PDF (or the brief request for services) and emails you.</p>
+    <ul class="check" style="list-style:none;padding:0">
+      ${item(!miss.includes("SQUARE_ACCESS_TOKEN"), "Square access token (<code>SQUARE_ACCESS_TOKEN</code>)")}
+      ${item(!miss.includes("GMAIL_APP_PASSWORD"), "Gmail app password (<code>GMAIL_APP_PASSWORD</code>)")}
+      ${item(!!STATUS.admin_ready, "Admin password (<code>ADMIN_PASSWORD</code>)")}
+      ${item(ca && ca.ok, "Cash App Pay on payment links" + (ca && ca.ok ? ` (${ca.links} links checked)` : ""))}
+    </ul>
+    <p class="muted" style="margin-bottom:0">Last check: ${STATUS.checked ? when(STATUS.checked) : "never"}.</p>`;
+}
+
+(async () => {
+  const k = sessionStorage.getItem("bfk");
+  if (k) { try { KEY = await importKey(b64(k)); await start(); return; } catch { sessionStorage.removeItem("bfk"); } }
+  $("#email").value = OWNER_HINT;
+  fresh("vault/admin.json").then(r => { if (!r.ok) $("#setupCard").classList.remove("hidden"); });
+})();
+</script>
+</body>
+</html>

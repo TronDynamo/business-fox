@@ -39,3 +39,24 @@ your work sticks.
 - `redirects`: retired page -> replacement page. New duplicates are added here automatically.
 - `not_duplicates`: list of `[slug_a, slug_b]` pairs that look alike but are intentionally separate.
 - `banned_emails`: addresses that get replaced with `contact_email`.
+
+## Orders and the backup delivery bot
+
+A backup delivery bot (`tools/delivery_bot.py`, workflow "Delivery Bot") runs every 10 minutes.
+It does not edit store pages. It only writes to `vault/` and `ops/`.
+
+- **Never edit or delete** anything in `vault/`, `ops/`, `tools/`, `.github/`, or `admin.html`.
+- Deliver every order **within 30 minutes** of payment, and send it **from godzilla9zjb@gmail.com**.
+  After 30 minutes the bot checks that Gmail's Sent mail for an email to the buyer. If it finds none,
+  it delivers the order itself.
+- Only deliver after Square shows the payment as **COMPLETED**. Card, Apple Pay, Google Pay and
+  Cash App Pay all count.
+- Before delivering, read `ops/agent-status.json`:
+  https://raw.githubusercontent.com/TronDynamo/business-fox/main/ops/agent-status.json
+  - `delivered_by_bot`: the bot already sent it. Do not email the buyer again.
+  - `service_pending: true`: the bot sent the "send us your brief" email. The custom work is still
+    yours to do once the buyer replies.
+  - `needs_review`: the owner has to look at it. Don't guess.
+- The official product PDFs live encrypted in `vault/products/`. If you change a printable product,
+  tell the owner so the vault copy can be updated.
+- New Square payment links: keep Cash App Pay turned on (the bot also turns it on automatically).

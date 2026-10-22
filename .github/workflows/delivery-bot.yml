@@ -1,0 +1,48 @@
+name: Delivery Bot
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # every 10 minutes (GitHub may delay scheduled runs a few minutes)
+  workflow_dispatch:
+    inputs:
+      setup_admin:
+        description: "Re-create the admin login from the ADMIN_PASSWORD secret"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: delivery-bot
+  cancel-in-progress: false
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet cryptography==43.0.3
+      - name: Check payments and deliver
+        env:
+          VAULT_KEY: ${{ secrets.VAULT_KEY }}
+          SQUARE_ACCESS_TOKEN: ${{ secrets.SQUARE_ACCESS_TOKEN }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        run: python tools/delivery_bot.py ${{ inputs.setup_admin && '--setup-admin' || '' }}
+      - name: Save order history
+        run: |
+          git config user.name "Delivery Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vault ops
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -q -m "Delivery Bot: update order history"
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0
+            sleep $((i * 10))
+          done
+          exit 1

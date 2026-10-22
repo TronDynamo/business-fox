@@ -37,7 +37,7 @@ CHECK = "--check" in sys.argv
 STOP = set("a an and the for of to your you with without in on by from how pdf printable "
            "template templates set pack kit sheet guide practical simple local service "
            "business businesses small step steps".split())
-SKIP_PAGES = {"index.html", "about.html", "guides.html", "portfolio.html", "business-fox.html"}
+SKIP_PAGES = {"index.html", "about.html", "guides.html", "portfolio.html", "business-fox.html", "admin.html"}
 
 changes, problems = [], []
 _files = {}
@@ -322,7 +322,7 @@ def check_links():
     broken = []
     for f in glob.glob("*.html") + glob.glob("portfolio/**/*.html", recursive=True):
         for m in re.findall(r'(?:href|src)="([^"#?]+)', read(f)):
-            if re.match(r"^(https?:|mailto:|tel:|data:|javascript:|//)", m):
+            if "${" in m or re.match(r"^(https?:|mailto:|tel:|data:|javascript:|//)", m):
                 continue
             p = os.path.normpath(os.path.join(os.path.dirname(f), m))
             if m.endswith("/"):
@@ -334,6 +334,31 @@ def check_links():
     return broken
 
 
+# ---------------------------------------------------------------- 9. store extras
+PAYNOTE = '<p class="muted paynote">Pay by card, Apple Pay, Google Pay or Cash App Pay.</p>'
+
+
+def store_extras(products):
+    """Owner login link in the homepage footer + Cash App note under buy buttons once the bot has enabled it."""
+    s = read("index.html")
+    if 'href="admin.html"' not in s and "</footer>" in s:
+        if write("index.html", s.replace("</footer>", '<p><a href="admin.html" rel="nofollow">Owner login</a></p></footer>', 1)):
+            changes.append("Added Owner login link to the homepage footer")
+    try:
+        cash = json.load(open("ops/bot-status.json")).get("cash_app_pay", {}).get("ok")
+    except Exception:
+        cash = False
+    if not cash:
+        return
+    for slug in products:
+        s = read(slug)
+        if "paynote" in s:
+            continue
+        new = re.sub(r'(<p><a class="buy"[^>]*>.*?</a></p>)', lambda m: m.group(1) + PAYNOTE, s, count=1, flags=re.S)
+        if write(slug, new):
+            changes.append(f"Added Cash App Pay note to {slug}")
+
+
 # ---------------------------------------------------------------- main
 def main():
     fix_emails()
@@ -343,6 +368,7 @@ def main():
     dedupe_products(products)
     dedupe_guides(guides)
     fix_feeds(products)
+    store_extras(products)
     rebuild_sitemap()
     check_links()
 
