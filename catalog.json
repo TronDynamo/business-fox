@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-23T01:42:41Z",
+  "updated": "2026-10-23T01:52:52Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -321,7 +321,7 @@
       "title": "Premium Local Service Business Email Welcome Sequence",
       "price": "298.99",
       "checkout": "https://square.link/u/PHr3XNbO",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "local-business-content-calendar-template-50.html",
