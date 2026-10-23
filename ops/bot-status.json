@@ -1,9 +1,9 @@
 {
   "missing_secrets": [],
-  "checked": "2026-10-23T05:35:27Z",
+  "checked": "2026-10-23T10:28:35Z",
   "admin_ready": true,
   "cash_app_pay": {
-    "links": 49,
+    "links": 51,
     "ok": true
   },
   "last_order_check_ok": true
