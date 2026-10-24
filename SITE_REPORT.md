@@ -1,13 +1,14 @@
 # Site Doctor report
 
-Run: 2026-10-24T05:55:05Z
+Run: 2026-10-24T06:06:04Z
 
-Live products: 51  |  Live guides: 28  |  Redirected pages: 39
+Live products: 51  |  Live guides: 29  |  Redirected pages: 39
 
 ## Fixed this run
 
-- Nothing needed fixing.
+- Linked the premium style layer into 2 page(s)
+- Rebuilt sitemap.xml (114 pages)
 
 ## Problems found
 
-- None.
+- sitemap.xml was out of date
