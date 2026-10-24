@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-24T09:26:26Z",
+  "updated": "2026-10-24T10:06:36Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -393,6 +393,14 @@
       "title": "Kids Screen-Free Activity and Chore Planner",
       "price": "7.99",
       "checkout": "https://square.link/u/6ZO8R1Ly",
+      "listed": true
+    },
+    {
+      "slug": "wedding-venue-comparison-and-budget-planner-60.html",
+      "id": "BF-PRI-8A771A",
+      "title": "Wedding Venue Comparison and Budget Planner",
+      "price": "9.99",
+      "checkout": "https://square.link/u/IlXxsDxy",
       "listed": true
     },
     {
