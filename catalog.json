@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-24T06:06:04Z",
+  "updated": "2026-10-24T08:46:14Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -377,6 +377,14 @@
       "title": "Professional Interior Design Client Intake Form Service",
       "price": "178.99",
       "checkout": "https://square.link/u/vub3eUsk",
+      "listed": true
+    },
+    {
+      "slug": "professional-kids-activity-and-coloring-pack-for-businesses-58.html",
+      "id": "BF-PRI-FD6C2D",
+      "title": "Professional Kids Activity and Coloring Pack for Businesses",
+      "price": "9.99",
+      "checkout": "https://square.link/u/DdrOoNtM",
       "listed": true
     },
     {
