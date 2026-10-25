@@ -8,9 +8,11 @@
   "history_days_first_run": 30,
   "lookback_days": 3,
   "match_threshold": 0.55,
-  "send_if_gmail_unavailable": true,
+  "send_if_gmail_unavailable": false,
   "enable_cash_app_pay": true,
   "owner_alerts": true,
+  "notify_on_every_sale": true,
+  "needs_review_digest_hours": 24,
   "square_item_map": {},
   "ignore_payment_ids": {
     "cbjyO42y9GCrRhqIGCySiZIbQRZZY": "Square $1 account verification charge (Oct 18)"

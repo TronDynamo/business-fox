@@ -9,6 +9,10 @@ on:
         description: "Re-create the admin login from the ADMIN_PASSWORD secret"
         type: boolean
         default: false
+      dry_run:
+        description: "Test run only: check Square/Gmail and log what it WOULD do, but send no email and save nothing"
+        type: boolean
+        default: false
       resend_payment_id:
         description: "Supervisor fix: Square payment ID of the order to resend"
         required: false
@@ -48,8 +52,12 @@ jobs:
           RESEND_PAYMENT_ID: ${{ inputs.resend_payment_id }}
           RESEND_FILE: ${{ inputs.resend_file }}
           RESEND_NOTE: ${{ inputs.resend_note }}
-        run: python tools/delivery_bot.py ${{ inputs.setup_admin && '--setup-admin' || '' }}
+        run: >
+          python tools/delivery_bot.py
+          ${{ inputs.setup_admin && '--setup-admin' || '' }}
+          ${{ inputs.dry_run && '--dry-run' || '' }}
       - name: Save order history
+        if: ${{ !inputs.dry_run }}
         run: |
           git config user.name "Delivery Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -427,6 +427,7 @@ def main():
     grace = timedelta(minutes=CFG.get("grace_minutes", 30))
     max_age = timedelta(hours=CFG.get("max_auto_send_hours", 72))
     acted = []
+    new_sales = []
 
     ignore = CFG.get("ignore_payment_ids", {})
     for pid in list(state["orders"]):
@@ -437,6 +438,7 @@ def main():
         if pid in ignore:
             continue
         rec = state["orders"].get(pid)
+        was_new = rec is None
         paid = pay.get("status") == "COMPLETED"
         refunded = (pay.get("refunded_money") or {}).get("amount", 0) >= (pay.get("amount_money") or {}).get("amount", 1)
         if rec and rec["status"] in ("delivered_by_ai", "delivered_by_bot", "manual_done", "website_in_progress"):
@@ -470,6 +472,10 @@ def main():
                     "method": method, "payment_status": "REFUNDED" if refunded else pay.get("status"),
                     "receipt_url": pay.get("receipt_url"), "items": items})
         state["orders"][pid] = rec
+
+        if was_new and paid and not refunded and CFG.get("notify_on_every_sale", True):
+            names = ", ".join(i.get("product_title") or i.get("square_name") or "?" for i in items)
+            new_sales.append(f"New sale: {names} - ${rec['amount']:.2f} from {buyer_email or 'no email on payment'}")
 
         def mark(st, note):
             if rec.get("status") != st or (rec["history"] and rec["history"][-1]["note"] != note):
@@ -575,9 +581,25 @@ def main():
     status["last_order_check_ok"] = True
     write_json_if_changed(STATUS_FILE, status)
 
+    if new_sales:
+        alert_owner(f"{len(new_sales)} new sale(s)", new_sales)
     if acted:
         alert_owner(f"{len(acted)} order update(s)", acted)
-    log(f"Checked {len(payments)} payment(s); state {'changed' if changed else 'unchanged'}; {len(acted)} action(s)")
+
+    # once-a-day summary of anything stuck needing a human look, so it can't silently sit for days
+    review = [r for r in state["orders"].values() if r.get("status") == "needs_review"]
+    digest_every = timedelta(hours=CFG.get("needs_review_digest_hours", 24))
+    last_digest = state.get("last_digest_sent")
+    last_digest_dt = datetime.strptime(last_digest, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) if last_digest else None
+    if review and (not last_digest_dt or NOW - last_digest_dt >= digest_every):
+        lines = [f"{r.get('email') or 'no email'} - {', '.join(i.get('product_title') or i.get('square_name') or '?' for i in r.get('items', []))}"
+                 f" (${r.get('amount', 0):.2f}): {(r.get('history') or [{}])[-1].get('note', '')}" for r in review]
+        alert_owner(f"Daily check: {len(review)} order(s) still need a look", lines)
+        state["last_digest_sent"] = NOW.strftime("%Y-%m-%dT%H:%M:%SZ")
+        changed = save_state(key, state) or changed
+
+    log(f"Checked {len(payments)} payment(s); state {'changed' if changed else 'unchanged'}; "
+        f"{len(new_sales)} new sale(s), {len(acted)} action(s), {len(review)} needing review")
 
 
 if __name__ == "__main__":
