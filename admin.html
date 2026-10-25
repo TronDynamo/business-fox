@@ -140,7 +140,11 @@ code{background:var(--bg);padding:1px 5px;border-radius:4px;font-size:13px}
   </div>
 
   <div id="tab-products" class="hidden">
-    <p class="muted">Printable products are stored encrypted in the store. Download any file to send it by hand.</p>
+    <div class="tools">
+      <p class="muted" style="margin:0">Printable products are stored encrypted in the store. Download any file to send it by hand.</p>
+      <span class="sp" style="flex:1"></span>
+      <button class="ghost" id="dlAll">Download all as ZIP</button>
+    </div>
     <div class="grid" id="prodGrid"></div>
     <h2 style="font-size:16px;margin:26px 0 8px">Services and websites</h2>
     <p class="muted" style="margin-top:0">Custom work. No file to send. The bot emails the buyer asking for their brief.</p>
@@ -153,6 +157,7 @@ code{background:var(--bg);padding:1px 5px;border-radius:4px;font-size:13px}
 </section>
 </main>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 const OWNER_HINT = "godzilla9zjb@gmail.com";
 const $ = s => document.querySelector(s);
@@ -278,6 +283,29 @@ document.addEventListener("click", async e => {
     dl.disabled = false; dl.textContent = t;
   }
 });
+
+$("#dlAll").onclick = async () => {
+  const btn = $("#dlAll"); const was = btn.textContent;
+  const ids = Object.keys(MANIFEST);
+  if (!ids.length) { alert("No product files yet."); return; }
+  btn.disabled = true;
+  try {
+    const zip = new JSZip();
+    for (let i = 0; i < ids.length; i++) {
+      const id = ids[i], m = MANIFEST[id];
+      btn.textContent = `Decrypting ${i + 1}/${ids.length}...`;
+      const r = await fresh(m.file);
+      const pdf = await decrypt(KEY, await r.arrayBuffer());
+      zip.file(m.title.replace(/[^A-Za-z0-9 \-]/g, "").trim() + ".pdf", pdf);
+    }
+    btn.textContent = "Zipping...";
+    const blob = await zip.generateAsync({type: "blob"});
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+    a.download = "business-fox-products-" + new Date().toISOString().slice(0, 10) + ".zip"; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  } catch (e) { alert("Could not build the zip: " + e.message); }
+  btn.disabled = false; btn.textContent = was;
+};
 
 $("#csv").onclick = () => {
   const head = ["paid_at", "buyer_name", "email", "products", "amount", "method", "payment_status", "status", "service_pending", "payment_id"];
