@@ -1,6 +1,6 @@
 # Site Doctor report
 
-Run: 2026-10-26T06:45:44Z
+Run: 2026-10-26T08:56:00Z
 
 Live products: 59  |  Live guides: 29  |  Redirected pages: 39
 
@@ -10,13 +10,13 @@ Live products: 59  |  Live guides: 29  |  Redirected pages: 39
 - Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in index.html
 - Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in merchant.xml
 - Added Owner login link to the homepage footer
-- Added Cash App Pay note to local-service-business-quarterly-planning-bundle-17.html
-- Added Cash App Pay note to local-service-business-social-media-content-kit-25.html
-- Added Cash App Pay note to local-service-business-weekly-schedule-planner-16.html
-- Added Cash App Pay note to premium-local-service-business-growth-copywriting-package-48.html
-- Linked the premium style layer into 7 page(s)
-- Rebuilt sitemap.xml (129 pages)
+- Added Cash App Pay note to business-launch-kit-website-social-41.html
+- Added Cash App Pay note to custom-4-page-business-website-36.html
+- Added Cash App Pay note to custom-one-page-business-website-35.html
+- Added Cash App Pay note to local-service-business-estimate-and-invoice-template-pack-44.html
+- Added Cash App Pay note to website-care-plan-1-month-40.html
+- Linked the premium style layer into 8 page(s)
 
 ## Problems found
 
-- sitemap.xml was out of date
+- None.
