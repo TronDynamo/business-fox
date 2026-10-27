@@ -1,8 +1,8 @@
 # Site Doctor report
 
-Run: 2026-10-27T16:56:35Z
+Run: 2026-10-27T17:01:13Z
 
-Live products: 62  |  Live guides: 30  |  Redirected pages: 39
+Live products: 63  |  Live guides: 30  |  Redirected pages: 39
 
 ## Fixed this run
 
@@ -12,12 +12,12 @@ Live products: 62  |  Live guides: 30  |  Redirected pages: 39
 - Fixed product links in feed.xml
 - Fixed product links in merchant.xml
 - Added Owner login link to the homepage footer
-- Added Cash App Pay note to debt-payoff-and-budget-plan-copywriting-service-69.html
-- Linked the premium style layer into 7 page(s)
-- Rebuilt sitemap.xml (140 pages)
+- Added Cash App Pay note to custom-home-maintenance-and-systems-manual-service-70.html
+- Linked the premium style layer into 5 page(s)
+- Rebuilt sitemap.xml (142 pages)
 
 ## Problems found
 
-- feed.xml: item BF-SER-F3D990 linked to https://trondynamo.github.io/business-fox
-- merchant.xml: item BF-SER-F3D990 linked to https://trondynamo.github.io/business-fox
+- feed.xml: item BF-SER-48BFD7 linked to https://trondynamo.github.io/business-fox
+- merchant.xml: item BF-SER-48BFD7 linked to https://trondynamo.github.io/business-fox
 - sitemap.xml was out of date
