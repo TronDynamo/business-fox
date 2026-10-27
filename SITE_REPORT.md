@@ -1,12 +1,12 @@
 # Site Doctor report
 
-Run: 2026-10-27T16:25:49Z
+Run: 2026-10-27T16:40:19Z
 
 Live products: 61  |  Live guides: 30  |  Redirected pages: 39
 
 ## Fixed this run
 
-- Linked the premium style layer into 1 page(s)
+- Nothing needed fixing.
 
 ## Problems found
 
