@@ -1,6 +1,6 @@
 {
  "version": "2026-10-27",
- "created": "2026-10-27T08:43:42.318Z",
+ "created": "2026-10-27T08:51:35.176Z",
  "files": {
   "core/src/agent.js": "92069f7cf48aa2153d82ad0db8c43ce4f7d1d63376ce4a08240f8e353a5818cb",
   "core/src/ask.js": "429e537542b795b6d67e8572362999a787b448aa728bb7c0a71a355850c70c19",
@@ -21,7 +21,7 @@
   "core/src/queue.js": "b2259f767f0495ab496154a206b87abecf55aa39eca016f8e38274c1f3712add",
   "core/src/restore-backup.js": "ac6dfbf5cff92c548cf1e5d9a528e73a2752a59fc924c99b9c4a46a9d38f4a07",
   "core/src/safety.js": "70f47f91770537b330d3d409fe864cf6d2ad48c65f8f2ed7ffdbc40c49aaa2a3",
-  "core/src/server.js": "d22843fa848de42f9bd396a59cd022a974c2a047ad5879e3cf65a9bf4061f9cb",
+  "core/src/server.js": "84d3bffcfcb45dbaf9297e55febcec4c8cb742220e44195b0718825cb7c8c376",
   "core/src/social.js": "8b350e9361e7f31508a9593d4f87d498bba3c6049ce13889b1056c6f4f020030",
   "core/src/square.js": "42014e131bb0dcf83991b1661bb632b8bc51f0c1ee161bae77301d548a76ca53",
   "core/src/status.js": "90097eeac33a7996707572243358b7f18f12a5460b4dd066ec6763498caf6050",
@@ -90,5 +90,5 @@
   "core/Dockerfile": "dbbff8b88fd5ea8e64fd098081455a331af3b4dece0cfed4cc07947200231f69",
   "imagegen/Dockerfile": "8b2e57b83a34afbd917abef5277de7d034f7d542dd3e30bd979b7403ecb56b0a"
  },
- "signature": "hZy5sTAKUNfJ5P5GcKUUTTlQJFhrJqVwmH+F0Yy1dyHYomro1OvVAzxB4N+ttIvHIz8WZW28G5InwcqOrxq/AQ=="
+ "signature": "ReVJIsj7kw2xecljQzatnj25/6nrxQ8rIuhZ8yRKZ5m5nM0GrIL7qN8rszEA+csycnTJdUQal9dvCV8LXQpGDQ=="
 }
