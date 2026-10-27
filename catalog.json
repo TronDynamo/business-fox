@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-27T18:02:12Z",
+  "updated": "2026-10-27T18:12:20Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -185,7 +185,7 @@
       "title": "Local service business monthly content bundle",
       "price": "25.00",
       "checkout": "https://square.link/u/gSVVd7Jj",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "local-service-business-social-media-content-kit-25.html",
