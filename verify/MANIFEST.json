@@ -1,6 +1,6 @@
 {
  "version": "2026-10-27",
- "created": "2026-10-27T08:38:49.335Z",
+ "created": "2026-10-27T08:43:42.318Z",
  "files": {
   "core/src/agent.js": "92069f7cf48aa2153d82ad0db8c43ce4f7d1d63376ce4a08240f8e353a5818cb",
   "core/src/ask.js": "429e537542b795b6d67e8572362999a787b448aa728bb7c0a71a355850c70c19",
@@ -90,5 +90,5 @@
   "core/Dockerfile": "dbbff8b88fd5ea8e64fd098081455a331af3b4dece0cfed4cc07947200231f69",
   "imagegen/Dockerfile": "8b2e57b83a34afbd917abef5277de7d034f7d542dd3e30bd979b7403ecb56b0a"
  },
- "signature": "fyQ8Wqfit5vZPaC/ik2POK3HDlsBWDzKXpMNSEmy6nyR94TWkYqWES9xROSXX4117q5dJNHLItN5qA+HRuFmDw=="
+ "signature": "hZy5sTAKUNfJ5P5GcKUUTTlQJFhrJqVwmH+F0Yy1dyHYomro1OvVAzxB4N+ttIvHIz8WZW28G5InwcqOrxq/AQ=="
 }
