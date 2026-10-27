@@ -1,16 +1,16 @@
 {
  "version": "2026-10-27",
- "created": "2026-10-27T08:55:26.928Z",
+ "created": "2026-10-27T11:24:16.459Z",
  "files": {
-  "core/src/agent.js": "92069f7cf48aa2153d82ad0db8c43ce4f7d1d63376ce4a08240f8e353a5818cb",
+  "core/src/agent.js": "5542b809105b04c14a3cf8741e65831b3333f542e6d42b39617cd1b77c705738",
   "core/src/ask.js": "429e537542b795b6d67e8572362999a787b448aa728bb7c0a71a355850c70c19",
   "core/src/boot.js": "006045e876c8ad4903880a602e133df167d1c0f7d914eae5bfbfa6b02659e092",
   "core/src/compliance.js": "b21f564fab267120ebea6ae1e0b50ac4da457f67945138bcd6a51033f031c161",
   "core/src/config.js": "e2ad510156d078ac46eb4df4973328540421d49f25aae73905536148f0cd760d",
   "core/src/crew.js": "ae866307b9b833f471a18c5029367dfa9873aca78975f5576fd4617b59393cd9",
-  "core/src/db.js": "f5642b3f59a8e6ed3b95c831a083f27dbb0556ce7b773d1e8e9ebc02d5edd2b1",
+  "core/src/db.js": "7b8813b66a87685281d8f5c6793ef77d6a5affa93052fa22cf9fa3d7c54e847f",
   "core/src/dictionary.js": "c8b39b0fae8dd55dbd32561d9369fcaad12fa6ac8dcc622a6a67c7db4e4d59cd",
-  "core/src/fulfillment.js": "7a6bb30045163c18b8f78df5510708ae9850d337e356584a1b4460c5e698a9d9",
+  "core/src/fulfillment.js": "4221c2c7576d9551842f67e2e2c386be63ebd8713e5084c52178a2ea99e6332f",
   "core/src/imagegen.js": "6d3b3651a5a0cbfa142043d90a73657c6e681915a44dd37b74e3463ef867b807",
   "core/src/imgcheck.js": "45c60dc9230340299199e301f3f902767a5863714b3f075fd36cbade73a1348a",
   "core/src/integrity.js": "f41ae7a4e8a9717cf989edb834420fb0bbf9f68457e17712a56a6a7f1a920649",
@@ -20,12 +20,12 @@
   "core/src/prospect.js": "f32a4d03e181b9d3058b8ffbb120543df844f9ac2d79f563cab79db3b91af7e2",
   "core/src/queue.js": "b2259f767f0495ab496154a206b87abecf55aa39eca016f8e38274c1f3712add",
   "core/src/restore-backup.js": "ac6dfbf5cff92c548cf1e5d9a528e73a2752a59fc924c99b9c4a46a9d38f4a07",
-  "core/src/safety.js": "70f47f91770537b330d3d409fe864cf6d2ad48c65f8f2ed7ffdbc40c49aaa2a3",
+  "core/src/safety.js": "33b07fdd1a9ae145fa42460395612356ea106f4c664859d5bd93f7bf86a02ce8",
   "core/src/server.js": "33410051f8a6fed5539a90e06539929838e262c531940695628cf666a22cd0b9",
   "core/src/social.js": "8b350e9361e7f31508a9593d4f87d498bba3c6049ce13889b1056c6f4f020030",
   "core/src/square.js": "42014e131bb0dcf83991b1661bb632b8bc51f0c1ee161bae77301d548a76ca53",
   "core/src/status.js": "90097eeac33a7996707572243358b7f18f12a5460b4dd066ec6763498caf6050",
-  "core/src/store.js": "b1c6af893a7d7baba578387d26356b866d9ac6b86804d59863fb525f3bfacacb",
+  "core/src/store.js": "e3149ca0bce9b5623de5385f5783008194ba1bd82d582b59cdbddb35be44aac1",
   "core/src/ventures.js": "8c776fb1aaae99b31f12715f15da3374291c7842511fcdee9ef676bcc5c430fc",
   "core/src/verifiers.js": "a3e9308d626b1230d5441638abc38bb3bc1a866dd170f5afc92d6037ff33aab6",
   "core/src/watchdog.js": "22e68ff21330058eba6f2ac890a1ec81cd1ec863091bbd9b54e4931b527fead9",
@@ -90,5 +90,5 @@
   "core/Dockerfile": "dbbff8b88fd5ea8e64fd098081455a331af3b4dece0cfed4cc07947200231f69",
   "imagegen/Dockerfile": "8b2e57b83a34afbd917abef5277de7d034f7d542dd3e30bd979b7403ecb56b0a"
  },
- "signature": "fD94Je4GOFeCwf+9dYexGUaUU+b4OgPVF66sqHKIn4WQxny2Vi3JE8oo1Sz7XNw+kZwLBno+Aw/nVp1sfU0jAw=="
+ "signature": "9QgELvP1VPHaB79mn+IgxJQ1R4DNCIsECGM2KYYRh1IbURaKofXV3u+9qvTF4Z9PzdGDsT6lY2o80Ki7ULxzDg=="
 }
