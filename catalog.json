@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-28T23:41:19Z",
+  "updated": "2026-10-28T23:59:50Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -17,7 +17,7 @@
       "title": "Simple Morning Routine Tracker",
       "price": "4.99",
       "checkout": "https://square.link/u/0URJ0HLF",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "small-business-product-description-rewrite-4.html",
@@ -337,7 +337,7 @@
       "title": "ATS Friendly Resume Template",
       "price": "9.99",
       "checkout": "https://square.link/u/OQ1fFpRP",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "teacher-lesson-plan-and-classroom-management-template-53.html",
@@ -345,7 +345,7 @@
       "title": "Teacher Lesson Plan and Classroom Management Template",
       "price": "9.99",
       "checkout": "https://square.link/u/PflTHirL",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "homeschool-daily-lesson-and-attendance-planner-54.html",
@@ -353,7 +353,7 @@
       "title": "Homeschool Daily Lesson and Attendance Planner",
       "price": "10.99",
       "checkout": "https://square.link/u/ZkrggCpi",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "client-appreciation-thank-you-card-template-55.html",
@@ -393,7 +393,7 @@
       "title": "Kids Screen-Free Activity and Chore Planner",
       "price": "7.99",
       "checkout": "https://square.link/u/6ZO8R1Ly",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "wedding-venue-comparison-and-budget-planner-60.html",
@@ -401,7 +401,7 @@
       "title": "Wedding Venue Comparison and Budget Planner",
       "price": "9.99",
       "checkout": "https://square.link/u/IlXxsDxy",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "time-blocking-productivity-planner-61.html",
@@ -409,7 +409,7 @@
       "title": "Time Blocking Productivity Planner",
       "price": "7.99",
       "checkout": "https://square.link/u/MM9IfJXY",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "focus-planner-for-busy-minds-62.html",
@@ -417,7 +417,7 @@
       "title": "Focus Planner for Busy Minds",
       "price": "8.99",
       "checkout": "https://square.link/u/phVMnSgv",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "2027-year-at-a-glance-calendar-planner-63.html",
@@ -425,7 +425,7 @@
       "title": "2027 Year at a Glance Calendar Planner",
       "price": "8.99",
       "checkout": "https://square.link/u/WvReW0Gb",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "local-contractor-weekly-job-progress-log-64.html",
@@ -441,7 +441,7 @@
       "title": "Classroom Management and Behavior Tracking Bundle",
       "price": "9.99",
       "checkout": "https://square.link/u/u9laq6c3",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "monthly-household-budget-and-expense-planner-67.html",
@@ -449,7 +449,7 @@
       "title": "Monthly Household Budget and Expense Planner",
       "price": "7.99",
       "checkout": "https://square.link/u/fl6gC8E5",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "weekly-meal-plan-and-grocery-list-pdf-68.html",
@@ -457,7 +457,7 @@
       "title": "Weekly Meal Plan and Grocery List PDF",
       "price": "4.99",
       "checkout": "https://square.link/u/d5KlNOw6",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "debt-payoff-and-budget-plan-copywriting-service-69.html",
@@ -489,7 +489,7 @@
       "title": "Hydration and Water Intake Tracking Sheet",
       "price": "4.99",
       "checkout": "https://square.link/u/ZTewC2H3",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "premium-daily-job-log-and-workflow-optimization-service-73.html",
