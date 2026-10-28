@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-28T06:08:20Z",
+  "updated": "2026-10-28T06:13:51Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -473,6 +473,14 @@
       "title": "Custom Home Maintenance and Systems Manual Service",
       "price": "41.99",
       "checkout": "https://square.link/u/AA7LoxRs",
+      "listed": true
+    },
+    {
+      "slug": "undated-weekly-service-business-scheduler-71.html",
+      "id": "BF-PRI-390C36",
+      "title": "Undated Weekly Service Business Scheduler",
+      "price": "8.99",
+      "checkout": "https://square.link/u/o9VBm50X",
       "listed": true
     },
     {
