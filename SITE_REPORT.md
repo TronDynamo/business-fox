@@ -1,6 +1,6 @@
 # Site Doctor report
 
-Run: 2026-10-28T19:38:03Z
+Run: 2026-10-28T20:02:05Z
 
 Live products: 65  |  Live guides: 31  |  Redirected pages: 39
 
