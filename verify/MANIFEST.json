@@ -1,13 +1,13 @@
 {
- "version": "2026-10-27",
- "created": "2026-10-27T11:46:14.919Z",
+ "version": "2026-10-28",
+ "created": "2026-10-28T15:34:29.189Z",
  "files": {
   "core/src/agent.js": "5542b809105b04c14a3cf8741e65831b3333f542e6d42b39617cd1b77c705738",
   "core/src/ask.js": "429e537542b795b6d67e8572362999a787b448aa728bb7c0a71a355850c70c19",
   "core/src/boot.js": "006045e876c8ad4903880a602e133df167d1c0f7d914eae5bfbfa6b02659e092",
   "core/src/compliance.js": "b21f564fab267120ebea6ae1e0b50ac4da457f67945138bcd6a51033f031c161",
   "core/src/config.js": "e2ad510156d078ac46eb4df4973328540421d49f25aae73905536148f0cd760d",
-  "core/src/crew.js": "ae866307b9b833f471a18c5029367dfa9873aca78975f5576fd4617b59393cd9",
+  "core/src/crew.js": "94469e9cbf0aacdb51ef61ea9b41349926b1b705c8a9ecbe2b98dfb4305ae739",
   "core/src/db.js": "7b8813b66a87685281d8f5c6793ef77d6a5affa93052fa22cf9fa3d7c54e847f",
   "core/src/dictionary.js": "c8b39b0fae8dd55dbd32561d9369fcaad12fa6ac8dcc622a6a67c7db4e4d59cd",
   "core/src/fulfillment.js": "731c2ad4e3a2691aa47524931b6b1422b5d4015df349e9e7c2fbcf83a424f72b",
@@ -90,5 +90,5 @@
   "core/Dockerfile": "dbbff8b88fd5ea8e64fd098081455a331af3b4dece0cfed4cc07947200231f69",
   "imagegen/Dockerfile": "8b2e57b83a34afbd917abef5277de7d034f7d542dd3e30bd979b7403ecb56b0a"
  },
- "signature": "ynxGBngx0mNsGRwPZAH7NUBltMfJ9cy/GWSVZKTcLUe008NtnuyEeuPqU23/qDf5Z9wCZhUfwjxXKZU29J44DA=="
+ "signature": "2oenMO54YSxyUWCpu2w1ma3eOMAJWW+0X8u+YGJlykOMBQWjc9YIhxgC4K4TLHgRLFUIXJbntawkOwTaK2GfAg=="
 }
