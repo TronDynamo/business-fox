@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-29T07:06:59Z",
+  "updated": "2026-10-29T13:25:51Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -265,7 +265,7 @@
       "title": "Website Care Plan (1 month)",
       "price": "29.00",
       "checkout": "https://square.link/u/qjVpXaSi",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "business-launch-kit-website-social-41.html",
@@ -369,7 +369,7 @@
       "title": "Premium Job Cost and Profit Analysis Service",
       "price": "238.99",
       "checkout": "https://square.link/u/AKGBH98s",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "professional-interior-design-client-intake-form-service-57.html",
@@ -377,7 +377,7 @@
       "title": "Professional Interior Design Client Intake Form Service",
       "price": "178.99",
       "checkout": "https://square.link/u/vub3eUsk",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "professional-kids-activity-and-coloring-pack-for-businesses-58.html",
@@ -497,7 +497,7 @@
       "title": "Premium Daily Job Log and Workflow Optimization Service",
       "price": "238.99",
       "checkout": "https://square.link/u/2rg28v35",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "small-business-bookkeeping-and-expense-tracker-101.html",
@@ -540,6 +540,10 @@
     {
       "slug": "guide-how-local-contractors-can-manage-client-projects-and-quotes-efficientl.html",
       "title": "How Local Contractors Can Manage Client Projects and Quotes Efficiently"
+    },
+    {
+      "slug": "guide-how-local-contractors-can-stop-scope-creep-and-handle-change-orders-fa.html",
+      "title": "How Local Contractors Can Stop Scope Creep and Handle Change Orders Fairly"
     },
     {
       "slug": "guide-how-local-service-contractors-can-streamline-estimates-and-lead-tracki.html",
