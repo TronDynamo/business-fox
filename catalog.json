@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-29T00:30:29Z",
+  "updated": "2026-10-29T00:40:41Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -353,7 +353,7 @@
       "title": "Homeschool Daily Lesson and Attendance Planner",
       "price": "10.99",
       "checkout": "https://square.link/u/ZkrggCpi",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "client-appreciation-thank-you-card-template-55.html",
