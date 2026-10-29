@@ -1,6 +1,6 @@
 # Site Doctor report
 
-Run: 2026-10-29T21:23:43Z
+Run: 2026-10-29T21:43:53Z
 
 Live products: 66  |  Live guides: 32  |  Redirected pages: 39
 
@@ -10,7 +10,7 @@ Live products: 66  |  Live guides: 32  |  Redirected pages: 39
 - Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in index.html
 - Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in merchant.xml
 - Added Owner login link to the homepage footer
-- Linked the premium style layer into 4 page(s)
+- Linked the premium style layer into 5 page(s)
 - Rebuilt sitemap.xml (148 pages)
 
 ## Problems found
