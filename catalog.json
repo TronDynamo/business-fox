@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-29T21:07:56Z",
+  "updated": "2026-10-29T21:23:43Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -369,7 +369,7 @@
       "title": "Premium Job Cost and Profit Analysis Service",
       "price": "238.99",
       "checkout": "https://square.link/u/AKGBH98s",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "professional-interior-design-client-intake-form-service-57.html",
