@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-29T02:02:34Z",
+  "updated": "2026-10-29T02:12:48Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -401,7 +401,7 @@
       "title": "Wedding Venue Comparison and Budget Planner",
       "price": "9.99",
       "checkout": "https://square.link/u/IlXxsDxy",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "time-blocking-productivity-planner-61.html",
