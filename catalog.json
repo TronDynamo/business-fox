@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-29T01:22:07Z",
+  "updated": "2026-10-29T01:31:50Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -441,7 +441,7 @@
       "title": "Classroom Management and Behavior Tracking Bundle",
       "price": "9.99",
       "checkout": "https://square.link/u/u9laq6c3",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "monthly-household-budget-and-expense-planner-67.html",
