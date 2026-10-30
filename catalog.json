@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-30T05:20:26Z",
+  "updated": "2026-10-30T05:24:22Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -273,7 +273,7 @@
       "title": "Business Launch Kit (Website + Social)",
       "price": "349.00",
       "checkout": "https://square.link/u/kFpCYCBA",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "material-delivery-log-template-43.html",
@@ -505,6 +505,14 @@
       "title": "Contractor Invoice and Payment Log PDF",
       "price": "7.99",
       "checkout": "https://square.link/u/RGEU4d7F",
+      "listed": true
+    },
+    {
+      "slug": "grocery-inventory-and-meal-prep-planner-75.html",
+      "id": "BF-PRI-E2E28D",
+      "title": "Grocery Inventory and Meal Prep Planner",
+      "price": "7.99",
+      "checkout": "https://square.link/u/hovtFOum",
       "listed": true
     },
     {
