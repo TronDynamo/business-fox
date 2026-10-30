@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-30T01:29:25Z",
+  "updated": "2026-10-30T01:44:18Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -497,7 +497,7 @@
       "title": "Premium Daily Job Log and Workflow Optimization Service",
       "price": "238.99",
       "checkout": "https://square.link/u/2rg28v35",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "contractor-invoice-and-payment-log-pdf-74.html",
