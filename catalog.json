@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-30T04:05:22Z",
+  "updated": "2026-10-30T04:23:59Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -249,7 +249,7 @@
       "title": "Custom One-Page Business Website",
       "price": "199.00",
       "checkout": "https://square.link/u/RMWwqLgp",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "custom-4-page-business-website-36.html",
@@ -265,7 +265,7 @@
       "title": "Website Care Plan (1 month)",
       "price": "29.00",
       "checkout": "https://square.link/u/qjVpXaSi",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "business-launch-kit-website-social-41.html",
