@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-10-30T09:05:39Z",
+  "updated": "2026-10-30T13:24:29Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -265,7 +265,7 @@
       "title": "Website Care Plan (1 month)",
       "price": "29.00",
       "checkout": "https://square.link/u/qjVpXaSi",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "business-launch-kit-website-social-41.html",
@@ -273,7 +273,7 @@
       "title": "Business Launch Kit (Website + Social)",
       "price": "349.00",
       "checkout": "https://square.link/u/kFpCYCBA",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "material-delivery-log-template-43.html",
@@ -369,7 +369,7 @@
       "title": "Premium Job Cost and Profit Analysis Service",
       "price": "238.99",
       "checkout": "https://square.link/u/AKGBH98s",
-      "listed": true
+      "listed": false
     },
     {
       "slug": "professional-interior-design-client-intake-form-service-57.html",
@@ -385,7 +385,7 @@
       "title": "Professional Kids Activity and Coloring Pack for Businesses",
       "price": "9.99",
       "checkout": "https://square.link/u/DdrOoNtM",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "kids-screen-free-activity-and-chore-planner-59.html",
@@ -417,7 +417,7 @@
       "title": "Focus Planner for Busy Minds",
       "price": "8.99",
       "checkout": "https://square.link/u/phVMnSgv",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "2027-year-at-a-glance-calendar-planner-63.html",
@@ -513,6 +513,22 @@
       "title": "Grocery Inventory and Meal Prep Planner",
       "price": "7.99",
       "checkout": "https://square.link/u/hovtFOum",
+      "listed": true
+    },
+    {
+      "slug": "local-service-business-employee-timesheet-log-77.html",
+      "id": "BF-PRI-261837",
+      "title": "Local Service Business Employee Timesheet Log",
+      "price": "8.99",
+      "checkout": "https://square.link/u/5veuj8w5",
+      "listed": true
+    },
+    {
+      "slug": "academic-and-research-cv-template-bundle-78.html",
+      "id": "BF-PRI-003CDF",
+      "title": "Academic and Research CV Template Bundle",
+      "price": "9.99",
+      "checkout": "https://square.link/u/pLgxD7Dc",
       "listed": true
     },
     {
