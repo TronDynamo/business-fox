@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-11-03T08:23:21Z",
+  "updated": "2026-11-03T08:29:39Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -529,6 +529,14 @@
       "title": "Academic and Research CV Template Bundle",
       "price": "9.99",
       "checkout": "https://square.link/u/pLgxD7Dc",
+      "listed": true
+    },
+    {
+      "slug": "gym-workout-and-exercise-progress-log-79.html",
+      "id": "BF-PRI-FA0F71",
+      "title": "Gym Workout and Exercise Progress Log",
+      "price": "8.99",
+      "checkout": "https://square.link/u/RtT5UqtU",
       "listed": true
     },
     {
