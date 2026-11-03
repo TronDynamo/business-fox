@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-11-03T08:44:25Z",
+  "updated": "2026-11-03T08:47:38Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -664,6 +664,10 @@
     {
       "slug": "guide-how-to-write-a-clear-e-commerce-return-policy-that-builds-trust.html",
       "title": "How to Write a Clear E-Commerce Return Policy That Builds Trust"
+    },
+    {
+      "slug": "guide-how-to-write-a-small-business-services-page-that-converts-visitors-int.html",
+      "title": "How to Write a Small Business Services Page That Converts Visitors into Paying Clients"
     },
     {
       "slug": "guide-how-to-write-an-about-page-for-your-small-business-website.html",
