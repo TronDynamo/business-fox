@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-11-03T15:37:30Z",
+  "updated": "2026-11-03T15:43:23Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -537,6 +537,14 @@
       "title": "Gym Workout and Exercise Progress Log",
       "price": "8.99",
       "checkout": "https://square.link/u/RtT5UqtU",
+      "listed": true
+    },
+    {
+      "slug": "custom-business-routine-and-workflow-design-80.html",
+      "id": "BF-SER-778AEB",
+      "title": "Custom Business Routine and Workflow Design",
+      "price": "41.99",
+      "checkout": "https://square.link/u/kATtSd1d",
       "listed": true
     },
     {
