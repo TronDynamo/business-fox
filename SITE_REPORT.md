@@ -1,13 +1,18 @@
 # Site Doctor report
 
-Run: 2026-11-03T21:00:03Z
+Run: 2026-11-03T22:43:05Z
 
 Live products: 72  |  Live guides: 33  |  Redirected pages: 39
 
 ## Fixed this run
 
-- Nothing needed fixing.
+- Updated the New arrivals section on the homepage
+- Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in index.html
+- Applied name 'Contractor monthly content bundle' for local-service-business-monthly-content-bundle-19.html in merchant.xml
+- Added Owner login link to the homepage footer
+- Linked the premium style layer into 4 page(s)
+- Rebuilt sitemap.xml (160 pages)
 
 ## Problems found
 
-- None.
+- sitemap.xml was out of date
