@@ -1,6 +1,6 @@
 {
   "_readme": "Live Business Fox catalog. Business-Fox: read this BEFORE creating a product or guide. If something with a similar name already exists, update that page instead of making a new one. Never reuse a slug listed in 'retired_pages'.",
-  "updated": "2026-11-04T13:30:21Z",
+  "updated": "2026-11-04T13:39:24Z",
   "contact_email": "godzilla9zjb@gmail.com",
   "products": [
     {
@@ -25,7 +25,7 @@
       "title": "Small business product description rewrite",
       "price": "25.00",
       "checkout": "https://square.link/u/quO3ETJX",
-      "listed": false
+      "listed": true
     },
     {
       "slug": "small-business-launch-copy-bundle-5.html",
